@@ -9,44 +9,53 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    //    @State var tabSelection
+    
     @Environment(\.managedObjectContext) private var viewContext
-
+    
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
+        TabView() {
+            NavigationView {
+                PlayerViewTest()
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            .tabItem {
+                Label("Sons", systemImage: "speaker.wave.3.fill")
+            }
+            .tag("123")
+            
+            NavigationView {
+                Button("Scroll to Row 10") {
+                    Task {
+                        await doTranscription(on: URL(fileURLWithPath: "/path/to/audio/file"))
+                            }
                 }
             }
-            Text("Select an item")
-        }
-    }
-
+            .tabItem {
+                Label("Sons", systemImage: "speaker.wave.3.fill")
+            }
+            .tag("123")
+            
+            NavigationView {
+                Test()
+            }
+            .tabItem {
+                Label("Sons", systemImage: "speaker.wave.3.fill")
+            }
+            .tag("123")
+            
+        }}
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -57,11 +66,11 @@ struct ContentView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -84,5 +93,6 @@ private let itemFormatter: DateFormatter = {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(PlayerService())
     }
 }

@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "audiokit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AudioKit/AudioKit.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "618df54cf5a31ae267d3957cf8a2f03a137f16cf"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1ef0345e1eaebabc32f9415fd9b01d9f8da8336d"
+      }
+    }
+  ],
+  "version" : 2
+}

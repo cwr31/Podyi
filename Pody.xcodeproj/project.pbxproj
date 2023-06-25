@@ -16,6 +16,26 @@
 		84225E4A2A44080500A1EAB0 /* PodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E492A44080500A1EAB0 /* PodyTests.swift */; };
 		84225E542A44080500A1EAB0 /* PodyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E532A44080500A1EAB0 /* PodyUITests.swift */; };
 		84225E562A44080500A1EAB0 /* PodyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E552A44080500A1EAB0 /* PodyUITestsLaunchTests.swift */; };
+		84225E682A440DC100A1EAB0 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E672A440DC000A1EAB0 /* PlayerView.swift */; };
+		84225E7A2A445FAF00A1EAB0 /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E792A445FAF00A1EAB0 /* Subtitle.swift */; };
+		84225E7C2A445FD600A1EAB0 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E7B2A445FD600A1EAB0 /* DownloadService.swift */; };
+		84225E7E2A445FEB00A1EAB0 /* SubtitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */; };
+		84225E802A445FFB00A1EAB0 /* WhisperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E7F2A445FFB00A1EAB0 /* WhisperService.swift */; };
+		84225E862A44609600A1EAB0 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84225E852A44609600A1EAB0 /* AudioKit */; };
+		84225E892A4498C000A1EAB0 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 84225E882A4498C000A1EAB0 /* Logging */; };
+		84225E8B2A45308A00A1EAB0 /* PlayerViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */; };
+		84B852C32A48170B006DBE06 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C12A48170B006DBE06 /* Recorder.swift */; };
+		84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */; };
+		84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */; };
+		84BEA38A2A483F8400EC8E8F /* SwiftWhisper in Frameworks */ = {isa = PBXBuildFile; productRef = 84BEA3892A483F8400EC8E8F /* SwiftWhisper */; };
+		84F995FE2A4698E100E9AEBE /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84F995FD2A4698E100E9AEBE /* AudioKit */; };
+		84F996002A4698E100E9AEBE /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 84F995FF2A4698E100E9AEBE /* Logging */; };
+		84F996022A46993300E9AEBE /* SubtitleServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F996012A46993300E9AEBE /* SubtitleServiceTests.swift */; };
+		84F996062A46A18300E9AEBE /* SubtitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */; };
+		84F996072A46A18600E9AEBE /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E792A445FAF00A1EAB0 /* Subtitle.swift */; };
+		84F9960B2A46AC2B00E9AEBE /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960A2A46AC2B00E9AEBE /* PlayerService.swift */; };
+		84F9960D2A46C43500E9AEBE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960C2A46C43500E9AEBE /* Test.swift */; };
+		84F9960F2A46F29F00E9AEBE /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960E2A46F29F00E9AEBE /* Episode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +69,20 @@
 		84225E4F2A44080500A1EAB0 /* PodyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84225E532A44080500A1EAB0 /* PodyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodyUITests.swift; sourceTree = "<group>"; };
 		84225E552A44080500A1EAB0 /* PodyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84225E672A440DC000A1EAB0 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		84225E792A445FAF00A1EAB0 /* Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtitle.swift; sourceTree = "<group>"; };
+		84225E7B2A445FD600A1EAB0 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
+		84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleService.swift; sourceTree = "<group>"; };
+		84225E7F2A445FFB00A1EAB0 /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
+		84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewTest.swift; sourceTree = "<group>"; };
+		84B852C12A48170B006DBE06 /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
+		84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiffWaveUtils.swift; sourceTree = "<group>"; };
+		84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperServiceV2.swift; sourceTree = "<group>"; };
+		84BEA3882A483F3600EC8E8F /* SwiftWhisper */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftWhisper; path = ../SwiftWhisper; sourceTree = "<group>"; };
+		84F996012A46993300E9AEBE /* SubtitleServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleServiceTests.swift; sourceTree = "<group>"; };
+		84F9960A2A46AC2B00E9AEBE /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		84F9960C2A46C43500E9AEBE /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		84F9960E2A46F29F00E9AEBE /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84225E892A4498C000A1EAB0 /* Logging in Frameworks */,
+				84225E862A44609600A1EAB0 /* AudioKit in Frameworks */,
+				84BEA38A2A483F8400EC8E8F /* SwiftWhisper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F996002A4698E100E9AEBE /* Logging in Frameworks */,
+				84F995FE2A4698E100E9AEBE /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +118,12 @@
 		84225E262A44080300A1EAB0 = {
 			isa = PBXGroup;
 			children = (
+				84BEA3872A483F3600EC8E8F /* Packages */,
 				84225E312A44080300A1EAB0 /* Pody */,
 				84225E482A44080500A1EAB0 /* PodyTests */,
 				84225E522A44080500A1EAB0 /* PodyUITests */,
 				84225E302A44080300A1EAB0 /* Products */,
+				84F995FA2A4698E100E9AEBE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +140,11 @@
 		84225E312A44080300A1EAB0 /* Pody */ = {
 			isa = PBXGroup;
 			children = (
+				84B852C02A48170B006DBE06 /* Utils */,
+				84B852BD2A4816F8006DBE06 /* Resources */,
+				84225E6C2A445F0400A1EAB0 /* Services */,
+				84225E6B2A445EFA00A1EAB0 /* Models */,
+				84225E662A440DA400A1EAB0 /* Views */,
 				84225E322A44080300A1EAB0 /* PodyApp.swift */,
 				84225E342A44080300A1EAB0 /* ContentView.swift */,
 				84225E362A44080500A1EAB0 /* Assets.xcassets */,
@@ -122,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				84225E492A44080500A1EAB0 /* PodyTests.swift */,
+				84F996012A46993300E9AEBE /* SubtitleServiceTests.swift */,
 			);
 			path = PodyTests;
 			sourceTree = "<group>";
@@ -133,6 +180,84 @@
 				84225E552A44080500A1EAB0 /* PodyUITestsLaunchTests.swift */,
 			);
 			path = PodyUITests;
+			sourceTree = "<group>";
+		};
+		84225E662A440DA400A1EAB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84225E672A440DC000A1EAB0 /* PlayerView.swift */,
+				84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */,
+				84F9960C2A46C43500E9AEBE /* Test.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84225E6B2A445EFA00A1EAB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84225E792A445FAF00A1EAB0 /* Subtitle.swift */,
+				84F9960E2A46F29F00E9AEBE /* Episode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84225E6C2A445F0400A1EAB0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				84225E7B2A445FD600A1EAB0 /* DownloadService.swift */,
+				84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */,
+				84225E7F2A445FFB00A1EAB0 /* WhisperService.swift */,
+				84F9960A2A46AC2B00E9AEBE /* PlayerService.swift */,
+				84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		84B852BD2A4816F8006DBE06 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84B852BE2A4816F8006DBE06 /* models */,
+				84B852BF2A4816F8006DBE06 /* samples */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		84B852BE2A4816F8006DBE06 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		84B852BF2A4816F8006DBE06 /* samples */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = samples;
+			sourceTree = "<group>";
+		};
+		84B852C02A48170B006DBE06 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84B852C12A48170B006DBE06 /* Recorder.swift */,
+				84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		84BEA3872A483F3600EC8E8F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				84BEA3882A483F3600EC8E8F /* SwiftWhisper */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		84F995FA2A4698E100E9AEBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +276,11 @@
 			dependencies = (
 			);
 			name = Pody;
+			packageProductDependencies = (
+				84225E852A44609600A1EAB0 /* AudioKit */,
+				84225E882A4498C000A1EAB0 /* Logging */,
+				84BEA3892A483F8400EC8E8F /* SwiftWhisper */,
+			);
 			productName = Pody;
 			productReference = 84225E2F2A44080300A1EAB0 /* Pody.app */;
 			productType = "com.apple.product-type.application";
@@ -169,6 +299,10 @@
 				84225E472A44080500A1EAB0 /* PBXTargetDependency */,
 			);
 			name = PodyTests;
+			packageProductDependencies = (
+				84F995FD2A4698E100E9AEBE /* AudioKit */,
+				84F995FF2A4698E100E9AEBE /* Logging */,
+			);
 			productName = PodyTests;
 			productReference = 84225E452A44080500A1EAB0 /* PodyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -223,6 +357,10 @@
 				Base,
 			);
 			mainGroup = 84225E262A44080300A1EAB0;
+			packageReferences = (
+				84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				84225E872A4498BF00A1EAB0 /* XCRemoteSwiftPackageReference "swift-log" */,
+			);
 			productRefGroup = 84225E302A44080300A1EAB0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,10 +403,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B852C32A48170B006DBE06 /* Recorder.swift in Sources */,
+				84F9960B2A46AC2B00E9AEBE /* PlayerService.swift in Sources */,
+				84225E802A445FFB00A1EAB0 /* WhisperService.swift in Sources */,
 				84225E3C2A44080500A1EAB0 /* Persistence.swift in Sources */,
+				84225E7C2A445FD600A1EAB0 /* DownloadService.swift in Sources */,
 				84225E3F2A44080500A1EAB0 /* Pody.xcdatamodeld in Sources */,
+				84F9960D2A46C43500E9AEBE /* Test.swift in Sources */,
 				84225E352A44080300A1EAB0 /* ContentView.swift in Sources */,
+				84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */,
+				84F9960F2A46F29F00E9AEBE /* Episode.swift in Sources */,
+				84225E682A440DC100A1EAB0 /* PlayerView.swift in Sources */,
 				84225E332A44080300A1EAB0 /* PodyApp.swift in Sources */,
+				84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */,
+				84225E7E2A445FEB00A1EAB0 /* SubtitleService.swift in Sources */,
+				84225E7A2A445FAF00A1EAB0 /* Subtitle.swift in Sources */,
+				84225E8B2A45308A00A1EAB0 /* PlayerViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +426,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F996062A46A18300E9AEBE /* SubtitleService.swift in Sources */,
+				84F996072A46A18600E9AEBE /* Subtitle.swift in Sources */,
 				84225E4A2A44080500A1EAB0 /* PodyTests.swift in Sources */,
+				84F996022A46993300E9AEBE /* SubtitleServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -409,7 +562,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -430,6 +583,8 @@
 				DEVELOPMENT_TEAM = W3URZS4WKQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pody/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -459,6 +614,8 @@
 				DEVELOPMENT_TEAM = W3URZS4WKQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pody/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -486,7 +643,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W3URZS4WKQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cwr.orz.PodyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -506,7 +663,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W3URZS4WKQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cwr.orz.PodyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -593,6 +750,52 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		84225E872A4498BF00A1EAB0 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84225E852A44609600A1EAB0 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		84225E882A4498C000A1EAB0 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84225E872A4498BF00A1EAB0 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		84BEA3892A483F8400EC8E8F /* SwiftWhisper */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftWhisper;
+		};
+		84F995FD2A4698E100E9AEBE /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		84F995FF2A4698E100E9AEBE /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84225E872A4498BF00A1EAB0 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		84225E3D2A44080500A1EAB0 /* Pody.xcdatamodeld */ = {
