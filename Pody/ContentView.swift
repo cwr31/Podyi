@@ -22,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         TabView() {
             NavigationView {
-                PlayerViewTest()
+//                PlayerViewTest()
             }
             .tabItem {
                 Label("Sons", systemImage: "speaker.wave.3.fill")

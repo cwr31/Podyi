@@ -24,6 +24,7 @@
 		84225E862A44609600A1EAB0 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84225E852A44609600A1EAB0 /* AudioKit */; };
 		84225E892A4498C000A1EAB0 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 84225E882A4498C000A1EAB0 /* Logging */; };
 		84225E8B2A45308A00A1EAB0 /* PlayerViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */; };
+		844D42912A4875C200C0DE25 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 844D42902A4875C200C0DE25 /* Zip */; };
 		84B852C32A48170B006DBE06 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C12A48170B006DBE06 /* Recorder.swift */; };
 		84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */; };
 		84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */; };
@@ -92,6 +93,7 @@
 			files = (
 				84225E892A4498C000A1EAB0 /* Logging in Frameworks */,
 				84225E862A44609600A1EAB0 /* AudioKit in Frameworks */,
+				844D42912A4875C200C0DE25 /* Zip in Frameworks */,
 				84BEA38A2A483F8400EC8E8F /* SwiftWhisper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +282,7 @@
 				84225E852A44609600A1EAB0 /* AudioKit */,
 				84225E882A4498C000A1EAB0 /* Logging */,
 				84BEA3892A483F8400EC8E8F /* SwiftWhisper */,
+				844D42902A4875C200C0DE25 /* Zip */,
 			);
 			productName = Pody;
 			productReference = 84225E2F2A44080300A1EAB0 /* Pody.app */;
@@ -360,6 +363,7 @@
 			packageReferences = (
 				84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				84225E872A4498BF00A1EAB0 /* XCRemoteSwiftPackageReference "swift-log" */,
+				844D428F2A4875C200C0DE25 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 84225E302A44080300A1EAB0 /* Products */;
 			projectDirPath = "";
@@ -768,6 +772,14 @@
 				kind = branch;
 			};
 		};
+		844D428F2A4875C200C0DE25 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.1.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -780,6 +792,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84225E872A4498BF00A1EAB0 /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		844D42902A4875C200C0DE25 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 844D428F2A4875C200C0DE25 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 		84BEA3892A483F8400EC8E8F /* SwiftWhisper */ = {
 			isa = XCSwiftPackageProductDependency;
