@@ -49,49 +49,6 @@ struct PlayerViewTest: View {
                     logger.info("scrollto: \(newIndex)")
                     scrollView.scrollTo(newIndex, anchor: .center)
                 }
-//                .onReceive(timer){ _ in
-//                    if !playerService.isPlaying {
-//                        return
-//                    }
-//                    playerService.currentTime = CMTimeGetSeconds(playerService.player.currentTime())
-//                    logger.info("currenTime1: \(playerService.currentTime)")
-//                    guard let subtitle = bisectLeft(subtitles: playerService.primarySubtitles, currentTime: playerService.currentTime) else { return }
-//                    logger.info("currenTime2: \(playerService.currentTime), subtitle: \(subtitle)")
-//                    if playerService.currentSubtitleIndex != subtitle.index {
-//                        playerService.currentSubtitleIndex = subtitle.index
-//                        scrollView.scrollTo(playerService.currentSubtitleIndex, anchor: .center)
-//                    }
-//                }
-                //                .onAppear {
-                //                    let interval = CMTime(seconds: 1, preferredTimescale: 1)
-                //                    playerService.player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main) {_ in
-                //                        if playerService.isPlaying{
-                //                            playerService.currentTime = CMTimeGetSeconds(playerService.player.currentTime())
-                //                        }
-                //                    }
-                //                    if (playerService.subtitleStartTimes.count > 0) {
-                //                        // Add a boundary time observer
-                //                        playerService.player.addBoundaryTimeObserver(forTimes: playerService.subtitleStartTimes as [NSValue], queue: DispatchQueue.main) {
-                //                            print("Boundary time reached")
-                //                            if playerService.shouldScrollToCurrent {
-                //                                for (index, subtitle) in playerService.primarySubtitles.enumerated() {
-                //                                    logger.info("current: \(playerService.currentTime), currentIndex: \(playerService.currentSubtitleIndex), sub: \(subtitle.startTime)")
-                //                                    if playerService.currentTime >= subtitle.startTime && playerService.currentTime < subtitle.endTime {
-                //                                        /// subtitles文件的index是从1开始的
-                //                                        if index != playerService.currentSubtitleIndex {
-                //                                            playerService.currentSubtitleIndex = index
-                //                                            logger.info("scroll: \(playerService.currentTime), \(playerService.currentSubtitleIndex)")
-                //                                            withAnimation {
-                //                                                scrollView.scrollTo(playerService.currentSubtitleIndex, anchor: .center)
-                //                                            }
-                //                                        }
-                //                                    }
-                //                                }
-                //                            }
-                //
-                //                        }
-                //                    }
-                //                }
 
                 Text("当前时间：\(playerService.currentTime, specifier: "%.2f")")
                     .font(.subheadline)
