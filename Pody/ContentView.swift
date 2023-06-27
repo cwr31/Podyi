@@ -5,57 +5,53 @@
 //  Created by cwr on 2023/6/22.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct ContentView: View {
-    //    @State var tabSelection
-    
+    @State var tabSelection: Int = 0
+
     @Environment(\.managedObjectContext) private var viewContext
-    
-    
+
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+        animation: .default
+    )
     private var items: FetchedResults<Item>
-    
+
     var body: some View {
-        TabView() {
+        TabView(selection: $tabSelection) {
             NavigationView {
-//                PlayerViewTest()
+                PlayerViewTest()
             }
             .tabItem {
                 Label("Sons", systemImage: "speaker.wave.3.fill")
             }
-            .tag("123")
-            
+            .tag(0)
+
             NavigationView {
-                Button("Scroll to Row 10") {
-                    Task {
-                        await doTranscription(on: URL(fileURLWithPath: "/path/to/audio/file"))
-                            }
-                }
+                Text("1")
             }
             .tabItem {
-                Label("Sons", systemImage: "speaker.wave.3.fill")
+                Label("Sons", systemImage: "music.quarternote.3")
             }
-            .tag("123")
-            
+            .tag(1)
+
             NavigationView {
-                Test()
+                Text("2")
             }
             .tabItem {
-                Label("Sons", systemImage: "speaker.wave.3.fill")
+                Label("Sons", systemImage: "chart.line.uptrend.xyaxis")
             }
-            .tag("123")
-            
-        }}
-    
+            .tag(2)
+        }
+    }
+
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-            
+
             do {
                 try viewContext.save()
             } catch {
@@ -66,11 +62,11 @@ struct ContentView: View {
             }
         }
     }
-    
+
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-            
+
             do {
                 try viewContext.save()
             } catch {

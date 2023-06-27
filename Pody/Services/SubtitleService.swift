@@ -10,25 +10,23 @@ import Logging
 
 let logger = Logger(label: "subtitleService")
 
-
-func bisectLeft(subtitles: [Subtitle], currentTime: TimeInterval) -> Subtitle? {
+func findSubtitle(subtitles: [Subtitle], currentTime: Double) -> Subtitle? {
     var left = 0
-    var right = subtitles.count
-    if (right == 0) {
-        return nil
-    }
-    
-    while left < right {
+    var right = subtitles.count - 1
+
+    while left <= right {
         let mid = left + (right - left) / 2
         let subtitle = subtitles[mid]
-    
-        if subtitle.startTime >= currentTime {
-            right = mid
-        } else if (subtitle.endTime <= currentTime) {
+
+        if subtitle.startTime <= currentTime, subtitle.endTime >= currentTime {
+            return subtitle
+        } else if subtitle.startTime > currentTime {
+            right = mid - 1
+        } else {
             left = mid + 1
         }
     }
-    return subtitles[left]
+    return nil
 }
 
 ///  load subtitle from file
@@ -52,38 +50,37 @@ func loadSubtitle(fromFile url: URL) -> [Subtitle] {
 
 func subtitlesToSrt(subtitles: [Subtitle], filePath: URL) {
     let fileManager = FileManager.default
-    
+
     // 创建临时文件路径
     let tmpFilePath = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("\(UUID().uuidString).srt")
-    
+
     // 将字幕对象数组转换为 SRT 字符串
     let srtString = subtitlesToSrt(subtitles: subtitles)
-    
+
     // 将 SRT 字符串写入临时文件
     do {
         try srtString.write(to: tmpFilePath, atomically: true, encoding: .utf8)
-        
+
         // 将临时文件替换为目标文件
         try fileManager.replaceItemAt(filePath, withItemAt: tmpFilePath)
-        
+
         logger.info("SRT file saved successfully")
     } catch {
         logger.info("Error: Could not save SRT file - \(error.localizedDescription)")
     }
 }
 
-
 func subtitlesToSrt(subtitles: [Subtitle]) -> String {
     var srtString = ""
     var index = 1
-    
+
     for subtitle in subtitles {
         let startTime = formatTime(time: subtitle.startTime)
         let endTime = formatTime(time: subtitle.endTime)
         srtString += "\(index)\n\(startTime) --> \(endTime)\n\(subtitle.text)\n\n"
         index += 1
     }
-    
+
     return srtString
 }
 
@@ -93,7 +90,7 @@ func formatTime(time: TimeInterval) -> String {
     let seconds = Int(time) % 60
     let minutes = (Int(time) / 60) % 60
     let hours = (Int(time) / 3600)
-    
+
     let srtString = String(format: "%02d:%02d:%02d,%03d", hours, minutes, seconds, milliseconds)
     return srtString
 }
@@ -104,7 +101,7 @@ func formatTime(time: String) -> TimeInterval {
     guard components.count == 4 else {
         return 0.0
     }
-    
+
     if let hours = Int(components[0]), let minutes = Int(components[1]), let seconds = Int(components[2]), let milliseconds = Int(components[3]) {
         let totalSeconds = (hours * 3600) + (minutes * 60) + seconds
         let totalMilliseconds = totalSeconds + (milliseconds / 1000)

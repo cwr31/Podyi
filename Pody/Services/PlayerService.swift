@@ -5,105 +5,139 @@
 //  Created by cwr on 2023/6/24.
 //
 
-import Foundation
 import AVKit
+import Combine
+import Foundation
 import Logging
 
 class PlayerService: ObservableObject {
-
     let logger = Logger(label: "playerService")
-        
-    @Published var player = AVPlayer()
+    private var playerItemStatusObserver: AnyCancellable?
+
     @Published var isPlaying = false
     @Published var currentTime: Double = 0
-    @Published var totalDuration: Double = 0
+    @Published var totalDuration: Double = 60
     @Published var hasPrevious = false
     @Published var hasNext = false
     @Published var shouldScrollToCurrent = true
-    @Published var primarySubtitles : [Subtitle] = []
-    @Published var secondrySubtitles : [Subtitle] = []
-    @Published var currentSubtitleIndex = 0
-    var subtitleStartTimes: [CMTime] = []
-//    var wavFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3")
-//    var primarySrtPath : URL
-//    var secondrySrtPath : URL
-//
-//    var player: MyAvPlayer
-//
-//    @State private var isPlaying = false
-//    @State private var currentTime: TimeInterval = 0.0
-//    @State private var currentSubtitleIndex = 0
-//    @State private var shouldScrollToCurrent = true
-    
+    /// srt 的index从1开始
+    @Published var currentSubtitleIndex = 1
+
+    //    var wavFilePath = FileManager.default.playList(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3")
+
     private var playerItem: AVPlayerItem?
-    private var currentURLIndex = 0
-    private var urls = [
+    private var currentEpisodeIndex = 0
+    private var playList = [
         URL(string: "YOUR_AUDIO_URL_1")!,
         URL(string: "YOUR_AUDIO_URL_2")!,
-        URL(string: "YOUR_AUDIO_URL_3")!
+        URL(string: "YOUR_AUDIO_URL_3")!,
     ]
-    
+    var player: AVPlayer
+    var primarySubtitles: [Subtitle] = []
+    var secondrySubtitles: [Subtitle] = []
+    var subtitleStartTimes: [NSValue] = []
+    var currentTimeObserver: Any?
+    var subtitleIndexObserver: Any?
+
     init() {
-        urls = []
         playerItem = nil
+        player = AVPlayer()
     }
-    
+
     func play(url: URL) {
         playerItem = AVPlayerItem(url: url)
-        if let playerItem = playerItem {
-            let duration = playerItem.duration
-            let durationInSeconds = CMTimeGetSeconds(duration)
-            totalDuration = durationInSeconds
-            print("音频时长：\(durationInSeconds) 秒")
-        }
         /// 初始化字幕文件和字幕位置
         primarySubtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
         secondrySubtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
         for item in primarySubtitles {
             let cmTime = CMTime(seconds: item.startTime, preferredTimescale: 1)
-            subtitleStartTimes.append(cmTime)
+            subtitleStartTimes.append(NSValue(time: cmTime))
         }
-        
+
         player.replaceCurrentItem(with: playerItem)
         player.play()
+
+        playerItemStatusObserver = playerItem?.publisher(for: \.status)
+            .sink(receiveValue: { [weak self] status in
+                if let playerItem = self?.playerItem {
+                    switch status {
+                    case .readyToPlay:
+                        self?.totalDuration = CMTimeGetSeconds(playerItem.duration)
+                        self?.logger.info("totalDuration: \(self?.totalDuration), \(status.rawValue)")
+                    default:
+                        self?.logger.info("totalDuration: \(self?.totalDuration), \(status.rawValue)")
+                    }
+                }
+            })
+
+        //            .store(in: &cancellables)
+
         isPlaying = true
-//        totalDuration = CMTimeGetSeconds(playerItem.duration)
-        hasPrevious = currentURLIndex > 0
-        hasNext = currentURLIndex < urls.count - 1
+        startProgress()
+//        self.totalDuration = CMTimeGetSeconds(self.player.currentItem!.duration)
+        logger.info("totalDuration \(totalDuration)")
+        hasPrevious = currentEpisodeIndex > 0
+        hasNext = currentEpisodeIndex < playList.count - 1
     }
-    
+
     func togglePlayback() {
         if isPlaying {
             player.pause()
+            stopProgress()
         } else {
             player.play()
+            startProgress()
         }
-        
+
         isPlaying.toggle()
     }
-    
+
     func next() {
-        guard currentURLIndex < urls.count - 1 else {
+        guard currentEpisodeIndex < playList.count - 1 else {
             return
         }
-        
-        currentURLIndex += 1
-        play(url: urls[currentURLIndex])
+
+        currentEpisodeIndex += 1
+        play(url: playList[currentEpisodeIndex])
     }
-    
+
     func previous() {
-        guard currentURLIndex > 0 else {
+        guard currentEpisodeIndex > 0 else {
             return
         }
-        
-        currentURLIndex -= 1
-        play(url: urls[currentURLIndex])
+
+        currentEpisodeIndex -= 1
+        play(url: playList[currentEpisodeIndex])
     }
-    
+
     func seek(to time: Double) {
         let cmTime = CMTime(seconds: time, preferredTimescale: 1000)
         player.seek(to: cmTime)
     }
-    
-}
 
+    func startProgress() {
+        let timeInterval = CMTime(seconds: 1, preferredTimescale: 1000)
+        currentTimeObserver = player.addPeriodicTimeObserver(forInterval: timeInterval, queue: .main) { [weak self] time in
+            self?.currentTime = CMTimeGetSeconds(time)
+        }
+        if subtitleStartTimes.count > 0 {
+            subtitleIndexObserver = player.addBoundaryTimeObserver(forTimes: subtitleStartTimes, queue: .main)
+                { [weak self] in
+                    guard let self else { return }
+
+                    guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: currentTime) else { return }
+
+                    if subtitle.index != currentSubtitleIndex {
+                        currentSubtitleIndex = subtitle.index
+                    }
+                }
+        }
+    }
+
+    func stopProgress() {
+        player.removeTimeObserver(currentTimeObserver)
+        player.removeTimeObserver(subtitleIndexObserver)
+//        playerItemStatusObserver?.cancel()
+//        playerItemStatusObserver = nil
+    }
+}

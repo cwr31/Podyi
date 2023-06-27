@@ -5,13 +5,11 @@
 //  Created by cwr on 2023/6/24.
 //
 
-import SwiftUI
 import AVKit
-
+import SwiftUI
 
 struct Test: View {
     @StateObject private var playerService = PlayerService()
-    
 
     var body: some View {
         VStack {
@@ -19,7 +17,7 @@ struct Test: View {
                 .onAppear {
                     playerService.play(url: URL(string: "http://192.168.123.2:5244/d/aq.mp4")!)
                 }
-            
+
             HStack {
                 Button(action: {
                     playerService.previous()
@@ -27,13 +25,13 @@ struct Test: View {
                     Image(systemName: "backward.fill")
                 }
                 .disabled(!playerService.hasPrevious)
-                
+
                 Button(action: {
                     playerService.togglePlayback()
                 }) {
                     Image(systemName: playerService.isPlaying ? "pause.fill" : "play.fill")
                 }
-                
+
                 Button(action: {
                     playerService.next()
                 }) {
@@ -41,7 +39,7 @@ struct Test: View {
                 }
                 .disabled(!playerService.hasNext)
             }
-            
+
 //            Slider(value: $playerService.currentTime, in: 0...playerService.totalDuration, onEditingChanged: { editing in
 //                if !editing {
 //                    playerService.seek(to: playerService.currentTime)

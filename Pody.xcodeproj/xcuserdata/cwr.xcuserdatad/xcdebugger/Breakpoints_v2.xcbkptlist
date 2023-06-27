@@ -36,53 +36,5 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BA43EDA1-9B4D-4E05-BC1B-784681B774E5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pody/Services/WhisperService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "downloadCoremlFile()"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "BA43EDA1-9B4D-4E05-BC1B-784681B774E5 - 2da540002ae96b46"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "downloadCoremlFile() -&gt; ()"
-                  moduleName = "Pody"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cwr/Desktop/Pody/Pody/Services/WhisperService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "1296">
-               </Location>
-               <Location
-                  uuid = "BA43EDA1-9B4D-4E05-BC1B-784681B774E5 - 19f9fe251bd5d026"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Foundation.URL, Foundation.URL, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in downloadCoremlFile() -&gt; ()"
-                  moduleName = "Pody"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cwr/Desktop/Pody/Pody/Services/WhisperService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "1232">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
