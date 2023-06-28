@@ -146,6 +146,7 @@
 		84225E312A44080300A1EAB0 /* Pody */ = {
 			isa = PBXGroup;
 			children = (
+				844D42982A4C01AF00C0DE25 /* ViewModels */,
 				84B852C02A48170B006DBE06 /* Utils */,
 				84B852BD2A4816F8006DBE06 /* Resources */,
 				84225E6C2A445F0400A1EAB0 /* Services */,
@@ -227,6 +228,13 @@
 				844D42962A4B22C200C0DE25 /* SubtitleUnitView.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		844D42982A4C01AF00C0DE25 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		84B852BD2A4816F8006DBE06 /* Resources */ = {
