@@ -9,13 +9,13 @@ import SwiftUI
 
 @main
 struct PodyApp: App {
-    @StateObject var myPlayer = MyPlayer()
+    @StateObject var playerViewModel = PlayerViewModel()
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(myPlayer)
+                .environmentObject(playerViewModel)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

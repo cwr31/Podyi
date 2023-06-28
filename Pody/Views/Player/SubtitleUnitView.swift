@@ -10,7 +10,7 @@ import SwiftUI
 struct SubtitleUnitView: View {
     @State var subtitle: Subtitle
     
-    @EnvironmentObject var myPlayer: MyPlayer
+    @EnvironmentObject var playerViewModel: PlayerViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -21,7 +21,7 @@ struct SubtitleUnitView: View {
             
             Text(subtitle.text)
                 .font(.system(size: 20, weight: .bold, design: .rounded))
-                .foregroundColor((myPlayer.currentSubtitleIndex == subtitle.index) ? .green : .black)
+                .foregroundColor((playerViewModel.currentSubtitleIndex == subtitle.index) ? .green : .black)
                 .multilineTextAlignment(.leading)
                 .padding([.top, .bottom], 5)
             

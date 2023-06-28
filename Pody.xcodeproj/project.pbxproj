@@ -16,17 +16,19 @@
 		84225E4A2A44080500A1EAB0 /* PodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E492A44080500A1EAB0 /* PodyTests.swift */; };
 		84225E542A44080500A1EAB0 /* PodyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E532A44080500A1EAB0 /* PodyUITests.swift */; };
 		84225E562A44080500A1EAB0 /* PodyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E552A44080500A1EAB0 /* PodyUITestsLaunchTests.swift */; };
-		84225E682A440DC100A1EAB0 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E672A440DC000A1EAB0 /* PlayerView.swift */; };
 		84225E7A2A445FAF00A1EAB0 /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E792A445FAF00A1EAB0 /* Subtitle.swift */; };
 		84225E7C2A445FD600A1EAB0 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E7B2A445FD600A1EAB0 /* DownloadService.swift */; };
 		84225E7E2A445FEB00A1EAB0 /* SubtitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */; };
 		84225E802A445FFB00A1EAB0 /* WhisperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E7F2A445FFB00A1EAB0 /* WhisperService.swift */; };
 		84225E862A44609600A1EAB0 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84225E852A44609600A1EAB0 /* AudioKit */; };
 		84225E892A4498C000A1EAB0 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 84225E882A4498C000A1EAB0 /* Logging */; };
-		84225E8B2A45308A00A1EAB0 /* PlayerViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */; };
+		84225E8B2A45308A00A1EAB0 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E8A2A45308A00A1EAB0 /* PlayerView.swift */; };
 		844D42912A4875C200C0DE25 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 844D42902A4875C200C0DE25 /* Zip */; };
 		844D42952A4B228B00C0DE25 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42942A4B228B00C0DE25 /* SubtitleView.swift */; };
 		844D42972A4B22C200C0DE25 /* SubtitleUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42962A4B22C200C0DE25 /* SubtitleUnitView.swift */; };
+		844D429B2A4C6A4500C0DE25 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D429A2A4C6A4500C0DE25 /* PlayerViewModel.swift */; };
+		844D429E2A4C7C4700C0DE25 /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = 844D429D2A4C7C4700C0DE25 /* Popovers */; };
+		844D42A12A4C820100C0DE25 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 844D42A02A4C820100C0DE25 /* PopupView */; };
 		84B852C32A48170B006DBE06 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C12A48170B006DBE06 /* Recorder.swift */; };
 		84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */; };
 		84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */; };
@@ -36,8 +38,6 @@
 		84F996022A46993300E9AEBE /* SubtitleServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F996012A46993300E9AEBE /* SubtitleServiceTests.swift */; };
 		84F996062A46A18300E9AEBE /* SubtitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */; };
 		84F996072A46A18600E9AEBE /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E792A445FAF00A1EAB0 /* Subtitle.swift */; };
-		84F9960B2A46AC2B00E9AEBE /* MyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960A2A46AC2B00E9AEBE /* MyPlayer.swift */; };
-		84F9960D2A46C43500E9AEBE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960C2A46C43500E9AEBE /* Test.swift */; };
 		84F9960F2A46F29F00E9AEBE /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960E2A46F29F00E9AEBE /* Episode.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,21 +72,19 @@
 		84225E4F2A44080500A1EAB0 /* PodyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84225E532A44080500A1EAB0 /* PodyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodyUITests.swift; sourceTree = "<group>"; };
 		84225E552A44080500A1EAB0 /* PodyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		84225E672A440DC000A1EAB0 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		84225E792A445FAF00A1EAB0 /* Subtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subtitle.swift; sourceTree = "<group>"; };
 		84225E7B2A445FD600A1EAB0 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 		84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleService.swift; sourceTree = "<group>"; };
 		84225E7F2A445FFB00A1EAB0 /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
-		84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewTest.swift; sourceTree = "<group>"; };
+		84225E8A2A45308A00A1EAB0 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		844D42942A4B228B00C0DE25 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		844D42962A4B22C200C0DE25 /* SubtitleUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleUnitView.swift; sourceTree = "<group>"; };
+		844D429A2A4C6A4500C0DE25 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		84B852C12A48170B006DBE06 /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiffWaveUtils.swift; sourceTree = "<group>"; };
 		84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperServiceV2.swift; sourceTree = "<group>"; };
 		84BEA3882A483F3600EC8E8F /* SwiftWhisper */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftWhisper; path = ../SwiftWhisper; sourceTree = "<group>"; };
 		84F996012A46993300E9AEBE /* SubtitleServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleServiceTests.swift; sourceTree = "<group>"; };
-		84F9960A2A46AC2B00E9AEBE /* MyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlayer.swift; sourceTree = "<group>"; };
-		84F9960C2A46C43500E9AEBE /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		84F9960E2A46F29F00E9AEBE /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844D42A12A4C820100C0DE25 /* PopupView in Frameworks */,
 				84225E892A4498C000A1EAB0 /* Logging in Frameworks */,
+				844D429E2A4C7C4700C0DE25 /* Popovers in Frameworks */,
 				84225E862A44609600A1EAB0 /* AudioKit in Frameworks */,
 				844D42912A4875C200C0DE25 /* Zip in Frameworks */,
 				84BEA38A2A483F8400EC8E8F /* SwiftWhisper in Frameworks */,
@@ -193,8 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				844D42922A4B225B00C0DE25 /* Player */,
-				84225E672A440DC000A1EAB0 /* PlayerView.swift */,
-				84F9960C2A46C43500E9AEBE /* Test.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,7 +212,6 @@
 				84225E7B2A445FD600A1EAB0 /* DownloadService.swift */,
 				84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */,
 				84225E7F2A445FFB00A1EAB0 /* WhisperService.swift */,
-				84F9960A2A46AC2B00E9AEBE /* MyPlayer.swift */,
 				84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */,
 			);
 			path = Services;
@@ -223,7 +220,7 @@
 		844D42922A4B225B00C0DE25 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */,
+				84225E8A2A45308A00A1EAB0 /* PlayerView.swift */,
 				844D42942A4B228B00C0DE25 /* SubtitleView.swift */,
 				844D42962A4B22C200C0DE25 /* SubtitleUnitView.swift */,
 			);
@@ -233,8 +230,17 @@
 		844D42982A4C01AF00C0DE25 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				844D42992A4C6A4500C0DE25 /* Player */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		844D42992A4C6A4500C0DE25 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				844D429A2A4C6A4500C0DE25 /* PlayerViewModel.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		84B852BD2A4816F8006DBE06 /* Resources */ = {
@@ -305,6 +311,8 @@
 				84225E882A4498C000A1EAB0 /* Logging */,
 				84BEA3892A483F8400EC8E8F /* SwiftWhisper */,
 				844D42902A4875C200C0DE25 /* Zip */,
+				844D429D2A4C7C4700C0DE25 /* Popovers */,
+				844D42A02A4C820100C0DE25 /* PopupView */,
 			);
 			productName = Pody;
 			productReference = 84225E2F2A44080300A1EAB0 /* Pody.app */;
@@ -386,6 +394,8 @@
 				84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				84225E872A4498BF00A1EAB0 /* XCRemoteSwiftPackageReference "swift-log" */,
 				844D428F2A4875C200C0DE25 /* XCRemoteSwiftPackageReference "Zip" */,
+				844D429C2A4C7C4700C0DE25 /* XCRemoteSwiftPackageReference "Popovers" */,
+				844D429F2A4C820100C0DE25 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 84225E302A44080300A1EAB0 /* Products */;
 			projectDirPath = "";
@@ -430,23 +440,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B852C32A48170B006DBE06 /* Recorder.swift in Sources */,
-				84F9960B2A46AC2B00E9AEBE /* MyPlayer.swift in Sources */,
 				84225E802A445FFB00A1EAB0 /* WhisperService.swift in Sources */,
 				84225E3C2A44080500A1EAB0 /* Persistence.swift in Sources */,
 				84225E7C2A445FD600A1EAB0 /* DownloadService.swift in Sources */,
 				84225E3F2A44080500A1EAB0 /* Pody.xcdatamodeld in Sources */,
-				84F9960D2A46C43500E9AEBE /* Test.swift in Sources */,
 				84225E352A44080300A1EAB0 /* ContentView.swift in Sources */,
 				84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */,
 				84F9960F2A46F29F00E9AEBE /* Episode.swift in Sources */,
-				84225E682A440DC100A1EAB0 /* PlayerView.swift in Sources */,
 				84225E332A44080300A1EAB0 /* PodyApp.swift in Sources */,
+				844D429B2A4C6A4500C0DE25 /* PlayerViewModel.swift in Sources */,
 				844D42972A4B22C200C0DE25 /* SubtitleUnitView.swift in Sources */,
 				84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */,
 				84225E7E2A445FEB00A1EAB0 /* SubtitleService.swift in Sources */,
 				84225E7A2A445FAF00A1EAB0 /* Subtitle.swift in Sources */,
 				844D42952A4B228B00C0DE25 /* SubtitleView.swift in Sources */,
-				84225E8B2A45308A00A1EAB0 /* PlayerViewTest.swift in Sources */,
+				84225E8B2A45308A00A1EAB0 /* PlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +812,22 @@
 				version = 2.1.2;
 			};
 		};
+		844D429C2A4C7C4700C0DE25 /* XCRemoteSwiftPackageReference "Popovers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aheze/Popovers";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		844D429F2A4C820100C0DE25 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -821,6 +845,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 844D428F2A4875C200C0DE25 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
+		};
+		844D429D2A4C7C4700C0DE25 /* Popovers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 844D429C2A4C7C4700C0DE25 /* XCRemoteSwiftPackageReference "Popovers" */;
+			productName = Popovers;
+		};
+		844D42A02A4C820100C0DE25 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 844D429F2A4C820100C0DE25 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
 		};
 		84BEA3892A483F8400EC8E8F /* SwiftWhisper */ = {
 			isa = XCSwiftPackageProductDependency;

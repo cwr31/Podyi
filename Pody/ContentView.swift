@@ -22,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $tabSelection) {
             NavigationView {
-                PlayerViewTest()
+                PlayerView()
             }
             .tabItem {
                 Label("Sons", systemImage: "speaker.wave.3.fill")
@@ -89,6 +89,6 @@ private let itemFormatter: DateFormatter = {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(MyPlayer())
+            .environmentObject(PlayerViewModel())
     }
 }
