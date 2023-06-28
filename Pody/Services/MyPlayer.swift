@@ -10,7 +10,7 @@ import Combine
 import Foundation
 import Logging
 
-class PlayerService: ObservableObject {
+class MyPlayer: ObservableObject {
     let logger = Logger(label: "playerService")
     private var playerItemStatusObserver: AnyCancellable?
 
@@ -74,7 +74,6 @@ class PlayerService: ObservableObject {
 
         isPlaying = true
         startProgress()
-//        self.totalDuration = CMTimeGetSeconds(self.player.currentItem!.duration)
         logger.info("totalDuration \(totalDuration)")
         hasPrevious = currentEpisodeIndex > 0
         hasNext = currentEpisodeIndex < playList.count - 1
@@ -116,21 +115,27 @@ class PlayerService: ObservableObject {
     }
 
     func startProgress() {
-        let timeInterval = CMTime(seconds: 1, preferredTimescale: 1000)
-        currentTimeObserver = player.addPeriodicTimeObserver(forInterval: timeInterval, queue: .main) { [weak self] time in
-            self?.currentTime = CMTimeGetSeconds(time)
-        }
+//        let timeInterval = CMTime(seconds: 1.5, preferredTimescale: 1000)
+//        currentTimeObserver = player.addPeriodicTimeObserver(forInterval: timeInterval, queue: .main) { [weak self] time in
+//            guard let self else { return }
+//            self.currentTime = CMTimeGetSeconds(time)
+//            guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: CMTimeGetSeconds(time)) else { return }
+//            if subtitle.index != currentSubtitleIndex {
+//                currentSubtitleIndex = subtitle.index
+//            }
+//        }
+        
         if subtitleStartTimes.count > 0 {
             subtitleIndexObserver = player.addBoundaryTimeObserver(forTimes: subtitleStartTimes, queue: .main)
-                { [weak self] in
-                    guard let self else { return }
-
-                    guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: currentTime) else { return }
-
-                    if subtitle.index != currentSubtitleIndex {
-                        currentSubtitleIndex = subtitle.index
-                    }
+            { [weak self] in
+                guard let self else { return }
+                self.currentTime = CMTimeGetSeconds(player.currentTime())
+                guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: currentTime) else { return }
+                
+                if subtitle.index != currentSubtitleIndex {
+                    currentSubtitleIndex = subtitle.index
                 }
+            }
         }
     }
 

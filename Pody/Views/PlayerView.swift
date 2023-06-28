@@ -27,7 +27,7 @@ struct PlayerView: View {
     //    @State private var currentSubtitleIndex = 0
     //    @State private var shouldScrollToCurrent = true
     //
-    @StateObject private var playerService = PlayerService()
+    @StateObject private var playerService = MyPlayer()
 //    var wavFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3")
 
     //

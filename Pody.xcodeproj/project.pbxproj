@@ -25,6 +25,8 @@
 		84225E892A4498C000A1EAB0 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 84225E882A4498C000A1EAB0 /* Logging */; };
 		84225E8B2A45308A00A1EAB0 /* PlayerViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */; };
 		844D42912A4875C200C0DE25 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 844D42902A4875C200C0DE25 /* Zip */; };
+		844D42952A4B228B00C0DE25 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42942A4B228B00C0DE25 /* SubtitleView.swift */; };
+		844D42972A4B22C200C0DE25 /* SubtitleUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42962A4B22C200C0DE25 /* SubtitleUnitView.swift */; };
 		84B852C32A48170B006DBE06 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C12A48170B006DBE06 /* Recorder.swift */; };
 		84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */; };
 		84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */; };
@@ -34,7 +36,7 @@
 		84F996022A46993300E9AEBE /* SubtitleServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F996012A46993300E9AEBE /* SubtitleServiceTests.swift */; };
 		84F996062A46A18300E9AEBE /* SubtitleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */; };
 		84F996072A46A18600E9AEBE /* Subtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E792A445FAF00A1EAB0 /* Subtitle.swift */; };
-		84F9960B2A46AC2B00E9AEBE /* PlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960A2A46AC2B00E9AEBE /* PlayerService.swift */; };
+		84F9960B2A46AC2B00E9AEBE /* MyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960A2A46AC2B00E9AEBE /* MyPlayer.swift */; };
 		84F9960D2A46C43500E9AEBE /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960C2A46C43500E9AEBE /* Test.swift */; };
 		84F9960F2A46F29F00E9AEBE /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9960E2A46F29F00E9AEBE /* Episode.swift */; };
 /* End PBXBuildFile section */
@@ -76,12 +78,14 @@
 		84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleService.swift; sourceTree = "<group>"; };
 		84225E7F2A445FFB00A1EAB0 /* WhisperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperService.swift; sourceTree = "<group>"; };
 		84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewTest.swift; sourceTree = "<group>"; };
+		844D42942A4B228B00C0DE25 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
+		844D42962A4B22C200C0DE25 /* SubtitleUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleUnitView.swift; sourceTree = "<group>"; };
 		84B852C12A48170B006DBE06 /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiffWaveUtils.swift; sourceTree = "<group>"; };
 		84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperServiceV2.swift; sourceTree = "<group>"; };
 		84BEA3882A483F3600EC8E8F /* SwiftWhisper */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftWhisper; path = ../SwiftWhisper; sourceTree = "<group>"; };
 		84F996012A46993300E9AEBE /* SubtitleServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleServiceTests.swift; sourceTree = "<group>"; };
-		84F9960A2A46AC2B00E9AEBE /* PlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerService.swift; sourceTree = "<group>"; };
+		84F9960A2A46AC2B00E9AEBE /* MyPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlayer.swift; sourceTree = "<group>"; };
 		84F9960C2A46C43500E9AEBE /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		84F9960E2A46F29F00E9AEBE /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,8 +191,8 @@
 		84225E662A440DA400A1EAB0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				844D42922A4B225B00C0DE25 /* Player */,
 				84225E672A440DC000A1EAB0 /* PlayerView.swift */,
-				84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */,
 				84F9960C2A46C43500E9AEBE /* Test.swift */,
 			);
 			path = Views;
@@ -209,10 +213,20 @@
 				84225E7B2A445FD600A1EAB0 /* DownloadService.swift */,
 				84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */,
 				84225E7F2A445FFB00A1EAB0 /* WhisperService.swift */,
-				84F9960A2A46AC2B00E9AEBE /* PlayerService.swift */,
+				84F9960A2A46AC2B00E9AEBE /* MyPlayer.swift */,
 				84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		844D42922A4B225B00C0DE25 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				84225E8A2A45308A00A1EAB0 /* PlayerViewTest.swift */,
+				844D42942A4B228B00C0DE25 /* SubtitleView.swift */,
+				844D42962A4B22C200C0DE25 /* SubtitleUnitView.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		84B852BD2A4816F8006DBE06 /* Resources */ = {
@@ -408,7 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B852C32A48170B006DBE06 /* Recorder.swift in Sources */,
-				84F9960B2A46AC2B00E9AEBE /* PlayerService.swift in Sources */,
+				84F9960B2A46AC2B00E9AEBE /* MyPlayer.swift in Sources */,
 				84225E802A445FFB00A1EAB0 /* WhisperService.swift in Sources */,
 				84225E3C2A44080500A1EAB0 /* Persistence.swift in Sources */,
 				84225E7C2A445FD600A1EAB0 /* DownloadService.swift in Sources */,
@@ -419,9 +433,11 @@
 				84F9960F2A46F29F00E9AEBE /* Episode.swift in Sources */,
 				84225E682A440DC100A1EAB0 /* PlayerView.swift in Sources */,
 				84225E332A44080300A1EAB0 /* PodyApp.swift in Sources */,
+				844D42972A4B22C200C0DE25 /* SubtitleUnitView.swift in Sources */,
 				84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */,
 				84225E7E2A445FEB00A1EAB0 /* SubtitleService.swift in Sources */,
 				84225E7A2A445FAF00A1EAB0 /* Subtitle.swift in Sources */,
+				844D42952A4B228B00C0DE25 /* SubtitleView.swift in Sources */,
 				84225E8B2A45308A00A1EAB0 /* PlayerViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

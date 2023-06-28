@@ -9,7 +9,7 @@ import AVKit
 import SwiftUI
 
 struct Test: View {
-    @StateObject private var playerService = PlayerService()
+    @StateObject private var playerService = MyPlayer()
 
     var body: some View {
         VStack {

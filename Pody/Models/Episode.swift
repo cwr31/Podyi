@@ -9,14 +9,14 @@ import Foundation
 
 class Episode: Hashable {
     var id: Int
-    var url: String
+    var url: URL
     var author: String
     var duration: Double
     var transcribed: Bool
     var primarySubtitles: [Subtitle] = []
     var secondarySubtitles: [Subtitle] = []
 
-    init(id: Int, url: String, author: String, duration: Double, transcribed: Bool, primarySubtitles: [Subtitle], secondarySubtitles: [Subtitle]) {
+    init(id: Int, url: URL, author: String, duration: Double, transcribed: Bool, primarySubtitles: [Subtitle], secondarySubtitles: [Subtitle]) {
         self.id = id
         self.url = url
         self.author = author
