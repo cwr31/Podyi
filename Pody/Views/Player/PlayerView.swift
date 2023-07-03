@@ -10,118 +10,136 @@ import Combine
 import Foundation
 import Logging
 import SwiftUI
-//import PopupView
-
 
 struct PlayerView: View {
     let logger = Logger(label: "player")
     
     @EnvironmentObject var playerViewModel: PlayerViewModel
     
-    @State private var speedSelectorPopUp = false
-    private var speedOptions : [Float] = [0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
+    @State private var playbackSpeed: Float = 1.0
+    @State private var speedSelectorPopUp: Bool = false
     
-    @State private var playbackSpeed : Double = 1.0
     var wavFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3")
     
     var body: some View {
-        VStack {
+        VStack (spacing: 0){
             SubtitleView(episode: Episode(id: 1, url: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3"), author: "All ears", duration: 1000.0, transcribed: true, primarySubtitles: [], secondarySubtitles: []))
+            
             Spacer()
+            
+            if speedSelectorPopUp {
+                SpeedSelectView(speedSelectorPopUp: $speedSelectorPopUp, playbackSpeed: $playbackSpeed)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    .onChange(of: playbackSpeed) { newSpeed in
+                        playerViewModel.setPlaybackSpeed(to: newSpeed)
+                    }
+            }
+            
+            if !speedSelectorPopUp {
+                // 展示当前播放的进度，使用progressview
+                ProgressView(value: playerViewModel.currentTime, total: playerViewModel.totalDuration)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    .tint(.primary)
+            }
+            
             HStack {
                 Button(action: {
                     playerViewModel.previousSubtitle()
                 }, label: {
-                    Image(systemName: "backward.fill")
-                        .font(.system(size: 30))
-                        .foregroundColor(.white)
+                    Image(systemName: "backward.frame.fill")
+                        .font(.system(size: 20))
+                        .foregroundColor(.primary)
                 })
-                .padding(.leading, 20)
-                Spacer()
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                
+                
                 Button(action: {
+                    //                    withAnimation(.easeOut) {
                     playerViewModel.togglePlayback()
+                    //                    }
                 }, label: {
-                    Image(systemName: playerViewModel.isPlaying ? "pause.fill" : "play.fill")
-                        .font(.system(size: 30))
-                        .foregroundColor(.white)
+                    if (playerViewModel.isPlaying) {
+                        Image(systemName:  "pause.circle.fill")
+                            .font(.system(size: 50))
+                            .foregroundColor(.primary)
+                            .symbolRenderingMode(.hierarchical)
+                    } else {
+                        Image(systemName: "play.circle.fill")
+                            .font(.system(size: 50))
+                            .foregroundColor(.primary)
+                            .symbolRenderingMode(.hierarchical)
+                    }
                 })
-                Spacer()
+                
                 Button(action: {
                     playerViewModel.nextSubtitle()
                 }, label: {
-                    Image(systemName: "forward.fill")
-                        .font(.system(size: 30))
-                        .foregroundColor(.white)
+                    Image(systemName: "forward.frame.fill")
+                        .font(.system(size: 20))
+                        .foregroundColor(.primary)
+                        .symbolRenderingMode(.hierarchical)
+                    
                 })
-                .padding(.trailing, 20)
                 
                 Spacer()
                 
-                /// 倍速按钮，点击倍速按钮弹出倍速选择框，有0.5、0.75、1.0、1.25、1.5、2.0倍速可选
-                //                Button(action: {
-                //                    speedSelectorPopUp = true
-                //                }) {
-                /// 显示当前速度
-                //                    Text("\(playerViewModel.playbackSpeed)x")
-                //                        .font(.system(size: 20))
-                //                    //                    .foregroundColor(.white)
-                //                }
-                //                .popover(isPresented: $speedSelectorPopUp, attachmentAnchor: .rect(.bounds)) {
-                ////                    VStack {
-                ////                        // 有0.5、0.75、1.0、1.25、1.5、2.0倍速可选
-                ////                        ForEach(speedOptions, id: \.self) { speed in
-                ////                            Button(action: {
-                ////                                playerViewModel.setPlaybackSpeed(to: speed)
-                ////                                speedSelectorPopUp = false
-                ////                            }) {
-                ////                                Text("\(speed)x")
-                ////                                    .font(.system(size: 20))
-                ////                                //                                .foregroundColor(.white)
-                ////                                    .padding()
-                ////                            }
-                ////                        }
-                ////                    }
-                ////                    .padding()
-                //                    Text("Hello").background(Color.yellow)
-                //
-                //                }
-                Menu{
-                    ForEach(speedOptions, id: \.self) { speed in
-                        Button(action: {
-                            if (speed != playerViewModel.playbackSpeed) {
-                                playerViewModel.setPlaybackSpeed(to: speed)
-                                speedSelectorPopUp = false
-                            }
-                        }) {
-                            if speed == 0.75 || speed == 1.25 {
-                                Text("\(String(format: "%.2f", speed))x")
-                                    .font(.system(size: 20))
-                                    .padding()
-                            } else {
-                                Text("\(String(format: "%.1f", speed))x")
-                                    .font(.system(size: 20))
-                                    .padding()
-                            }
+                VStack {
+                    Button(action: {
+                        withAnimation(.spring()) {
+                            speedSelectorPopUp.toggle()
                         }
-                    }
-                } label: {
-                    if playerViewModel.playbackSpeed == 0.75 || playerViewModel.playbackSpeed == 1.25 {
-                        Text("\(String(format: "%.2f", playerViewModel.playbackSpeed))x")
-                            .font(.system(size: 20))
-                            .padding()
-                    } else {
-                        Text("\(String(format: "%.1f", playerViewModel.playbackSpeed))x")
-                            .font(.system(size: 20))
-                            .padding()
+                    }) {
+                        
+                        Text("\(Constants.speedOptionsMap[playbackSpeed]!)x").tag(playbackSpeed)
                     }
                 }
+                
+                Spacer()
             }
-            .padding(.bottom, 20)
-            
-            
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
         }
     }
-    
+}
+
+struct SpeedSelectView: View {
+    @Binding var speedSelectorPopUp: Bool
+    @Binding var playbackSpeed: Float
+    @EnvironmentObject var playerViewModel: PlayerViewModel
+    var body: some View {
+        VStack {
+            HStack(spacing: 10) {
+                ForEach(Constants.speedOptions, id: \.self) { speed in
+                    Button(action: {
+                        playbackSpeed = speed
+                        withAnimation(.spring()) {
+                            speedSelectorPopUp.toggle()
+                        }
+                    }, label: {
+                        Text("\(Constants.speedOptionsMap[speed]!)")
+                    })
+                    .cornerRadius(20)
+                }
+            }.cornerRadius(20)
+            
+            // 展示进度条
+            Slider(value: $playerViewModel.currentTime,
+                   in: 0 ... playerViewModel.totalDuration,
+                   step: 1,
+                   onEditingChanged: {
+                editing in
+                if !editing {
+                    print("newTime: \(playerViewModel.currentTime)")
+                    playerViewModel.seek(to: playerViewModel.currentTime, updateCurrentSubtitleIndex: true)
+                    playerViewModel.togglePlayback()
+                } else {
+                    playerViewModel.togglePlayback()
+                }
+            }, minimumValueLabel: Text(formatTimeWithoutHour(time:playerViewModel.currentTime)),
+                   maximumValueLabel: Text(formatTimeWithoutHour(time:playerViewModel.totalDuration)),
+                   label: {})
+            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+        }
+    }
 }
 
 struct PlayerViewTest_Previews: PreviewProvider {
@@ -129,4 +147,3 @@ struct PlayerViewTest_Previews: PreviewProvider {
         PlayerView().environmentObject(PlayerViewModel())
     }
 }
-

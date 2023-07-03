@@ -11,7 +11,7 @@ import Foundation
 import Logging
 
 class PlayerViewModel: ObservableObject {
-    let logger = Logger(label: "playerService")
+    let logger = Logger(label: "PlayerViewModel")
     private var playerItemStatusObserver: AnyCancellable?
     
     @Published var isPlaying = false
@@ -22,8 +22,7 @@ class PlayerViewModel: ObservableObject {
     @Published var shouldScrollToCurrent = true
     /// srt 的index从1开始
     @Published var currentSubtitleIndex = 1
-    @Published var playbackSpeed: Float = 1.0
-    
+    // @Published var playbackSpeed: Float = 1.0
     
     //    var wavFilePath = FileManager.default.playList(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3")
     
@@ -56,22 +55,21 @@ class PlayerViewModel: ObservableObject {
             subtitleStartTimes.append(NSValue(time: cmTime))
         }
         
-        
         player.replaceCurrentItem(with: playerItem)
         player.play()
         
         /// 获取当前播放项目的时长
         playerItemStatusObserver = playerItem?.publisher(for: \.status).sink { [weak self] status in
-            guard let self = self else { return }
+            guard let self else { return }
             switch status {
             case .readyToPlay:
-                self.totalDuration = CMTimeGetSeconds(self.playerItem!.duration)
+                totalDuration = CMTimeGetSeconds(playerItem!.duration)
             case .failed:
-                self.logger.error("failed to play")
+                logger.error("failed statue")
             case .unknown:
-                self.logger.error("unknown error")
+                logger.error("unknown status")
             @unknown default:
-                self.logger.error("unknown error")
+                logger.error("unknown status")
             }
         }
         
@@ -119,57 +117,71 @@ class PlayerViewModel: ObservableObject {
         }
         
         seek(to: primarySubtitles[currentSubtitleIndex].startTime)
+        currentSubtitleIndex += 1
     }
     
     /// 从当前字幕开始，向前寻找上一个字幕
     func previousSubtitle() {
+        if primarySubtitles.count == 0 {
+            return
+        }
         if currentSubtitleIndex == 1 {
             seek(to: primarySubtitles[0].startTime)
         }
         guard currentSubtitleIndex - 1 > 0 else {
             return
         }
+        
         seek(to: primarySubtitles[currentSubtitleIndex - 2].startTime)
+        currentSubtitleIndex -= 1
     }
     
     /// 从当前时间开始，向后寻找下一个时间点
-    func seek(to time: Double) {
+    func seek(to time: Double, updateCurrentSubtitleIndex: Bool = false) {
         let cmTime = CMTime(seconds: time, preferredTimescale: 1000)
         player.seek(to: cmTime)
+        if (updateCurrentSubtitleIndex) {
+            guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: time) else { return }
+            if subtitle.index != currentSubtitleIndex {
+                currentSubtitleIndex = subtitle.index
+            }
+        }
+        
     }
     
     func startProgress() {
         let timeInterval = CMTime(seconds: 1, preferredTimescale: 1000)
         periodicTimeObserver = player.addPeriodicTimeObserver(forInterval: timeInterval, queue: .main) { [weak self] time in
             guard let self else { return }
-            self.currentTime = CMTimeGetSeconds(time)
-            guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: CMTimeGetSeconds(time)) else { return }
-            if subtitle.index != currentSubtitleIndex {
-                currentSubtitleIndex = subtitle.index
-            }
+            currentTime = CMTimeGetSeconds(time)
+            //            guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: CMTimeGetSeconds(time)) else { return }
+            //            if subtitle.index != currentSubtitleIndex {
+            //                currentSubtitleIndex = subtitle.index
         }
         
-        // if subtitleStartTimes.count > 0 {
-        //     boundaryTimeObserver = player.addBoundaryTimeObserver(forTimes: subtitleStartTimes, queue: .main)
-        //     { [weak self] in
-        //         guard let self else { return }
-        //         self.currentTime = CMTimeGetSeconds(player.currentTime())
-        //         guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: currentTime) else { return }
-        
-        //         if subtitle.index != currentSubtitleIndex {
-        //             currentSubtitleIndex = subtitle.index
-        //         }
-        //     }
-        // }
+        if subtitleStartTimes.count > 0 {
+            boundaryTimeObserver = player.addBoundaryTimeObserver(forTimes: subtitleStartTimes, queue: .main)
+            { [weak self] in
+                guard let self else { return }
+                self.currentTime = CMTimeGetSeconds(player.currentTime())
+                guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: currentTime) else { return }
+                
+                if subtitle.index != currentSubtitleIndex {
+                    currentSubtitleIndex = subtitle.index
+                }
+            }
+        }
     }
+    
     
     func setPlaybackSpeed(to speed: Float) {
         player.rate = speed
-        playbackSpeed = speed
     }
     
     func stopProgress() {
         player.removeTimeObserver(periodicTimeObserver)
-//        player.removeTimeObserver(boundaryTimeObserver)
+        if subtitleStartTimes.count > 0 {
+            player.removeTimeObserver(boundaryTimeObserver)
+        }
     }
 }

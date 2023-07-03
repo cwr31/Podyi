@@ -9,13 +9,15 @@ import SwiftUI
 
 @main
 struct PodyApp: App {
-    @StateObject var playerViewModel = PlayerViewModel()
+//    @StateObject var playerViewModel = PlayerViewModel()
+//    @StateObject var router = Router()
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(playerViewModel)
+                .environmentObject(PlayerViewModel())
+                .environmentObject(Router())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -24,8 +24,26 @@
         "repositoryURL": "https://github.com/exyte/PopupView.git",
         "state": {
           "branch": "master",
-          "revision": "c1d0959f444e7d8b20d8620b398bb6455be2ab4a",
+          "revision": "c7416bb9fa3944e72cedf4c1c9d6306146b17ba9",
           "version": null
+        }
+      },
+      {
+        "package": "swift-case-paths",
+        "repositoryURL": "https://github.com/pointfreeco/swift-case-paths",
+        "state": {
+          "branch": null,
+          "revision": "fc45e7b2cfece9dd80b5a45e6469ffe67fe67984",
+          "version": "0.14.1"
+        }
+      },
+      {
+        "package": "swift-custom-dump",
+        "repositoryURL": "https://github.com/pointfreeco/swift-custom-dump",
+        "state": {
+          "branch": null,
+          "revision": "3a35f7892e7cf6ba28a78cd46a703c0be4e0c6dc",
+          "version": "0.11.0"
         }
       },
       {
@@ -33,8 +51,44 @@
         "repositoryURL": "https://github.com/apple/swift-log.git",
         "state": {
           "branch": "main",
-          "revision": "1ef0345e1eaebabc32f9415fd9b01d9f8da8336d",
+          "revision": "f8ce47d3b04c217a5aa0f3e26a632fc3fec22f4a",
           "version": null
+        }
+      },
+      {
+        "package": "swiftui-introspect",
+        "repositoryURL": "https://github.com/siteline/swiftui-introspect",
+        "state": {
+          "branch": "master",
+          "revision": "f91114c0f41ce7636752130c87d2632260996d57",
+          "version": null
+        }
+      },
+      {
+        "package": "swiftui-navigation",
+        "repositoryURL": "https://github.com/pointfreeco/swiftui-navigation",
+        "state": {
+          "branch": "main",
+          "revision": "2aa885e719087ee19df251c08a5980ad3e787f12",
+          "version": null
+        }
+      },
+      {
+        "package": "VisibilityTrackingScrollView",
+        "repositoryURL": "https://github.com/elegantchaos/VisibilityTrackingScrollView.git",
+        "state": {
+          "branch": "main",
+          "revision": "65948d428fdb6c82bb56754f7030eb28b21a795c",
+          "version": null
+        }
+      },
+      {
+        "package": "xctest-dynamic-overlay",
+        "repositoryURL": "https://github.com/pointfreeco/xctest-dynamic-overlay",
+        "state": {
+          "branch": null,
+          "revision": "4af50b38daf0037cfbab15514a241224c3f62f98",
+          "version": "0.8.5"
         }
       },
       {

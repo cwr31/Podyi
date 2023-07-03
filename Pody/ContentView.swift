@@ -9,49 +9,53 @@ import CoreData
 import SwiftUI
 
 struct ContentView: View {
-    @State var tabSelection: Int = 0
-
+//    @State var tabSelection: Int = 0
+    @State var tabSelection: Tabs = .home
+    @EnvironmentObject private var router: Router
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default
     )
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
-        TabView(selection: $tabSelection) {
-            NavigationView {
-                PlayerView()
-            }
-            .tabItem {
-                Label("Sons", systemImage: "speaker.wave.3.fill")
-            }
-            .tag(0)
-
-            NavigationView {
-                Text("1")
-            }
-            .tabItem {
-                Label("Sons", systemImage: "music.quarternote.3")
-            }
-            .tag(1)
-
-            NavigationView {
+        NavigationView {
+            TabView(selection: $tabSelection) {
+                NavigationLink (destination: PlayerView()){
+                    Text("Tap me")
+                }
+                .navigationBarTitle("Home")
+                .tabItem {
+                    Label("Sons", systemImage: "speaker.wave.3.fill")
+                }
+                .tag(0)
+                
+                Test()
+                
+                    .tabItem {
+                        Label("Sons", systemImage: "music.quarternote.3")
+                    }
+                    .tag(1)
+                
+                
                 Text("2")
+                
+                    .tabItem {
+                        Label("Sons", systemImage: "chart.line.uptrend.xyaxis")
+                    }
+                    .tag(2)
             }
-            .tabItem {
-                Label("Sons", systemImage: "chart.line.uptrend.xyaxis")
-            }
-            .tag(2)
+            .navigationViewStyle(.stack)
         }
     }
-
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -62,11 +66,11 @@ struct ContentView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {

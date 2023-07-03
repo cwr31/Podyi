@@ -18,7 +18,7 @@ func findSubtitle(subtitles: [Subtitle], currentTime: Double) -> Subtitle? {
         let mid = left + (right - left) / 2
         let subtitle = subtitles[mid]
 
-        if subtitle.startTime <= currentTime, subtitle.endTime >= currentTime {
+        if subtitle.startTime <= currentTime, subtitle.endTime > currentTime {
             return subtitle
         } else if subtitle.startTime > currentTime {
             right = mid - 1
@@ -93,6 +93,15 @@ func formatTime(time: TimeInterval) -> String {
 
     let srtString = String(format: "%02d:%02d:%02d,%03d", hours, minutes, seconds, milliseconds)
     return srtString
+}
+
+func formatTimeWithoutHour(time: TimeInterval) -> String {
+    let totalSeconds = Int(time)
+    let minutes = (totalSeconds / 60) % 60
+    let time = totalSeconds % 60
+
+    let formattedString = String(format: "%02d:%02d", minutes, time)
+    return formattedString
 }
 
 /// 从00:00:00,000 ->  0.0

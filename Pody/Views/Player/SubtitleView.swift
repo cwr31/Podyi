@@ -6,17 +6,15 @@
 //
 
 import SwiftUI
+import SwiftUIIntrospect
 
 struct SubtitleView: View {
     @State var episode: Episode
     
     @EnvironmentObject var playerViewModel: PlayerViewModel
+    @State var scrollToTop : Bool = false
+    @State var lastVisibleIndex : Int = 0
     
-    init(episode:Episode) {
-        UITableViewCell.appearance().backgroundColor = .clear
-        UITableView.appearance().backgroundColor = .clear
-        self.episode = episode
-    }
     
     var body: some View {
         ScrollViewReader { scrollView in
@@ -24,22 +22,49 @@ struct SubtitleView: View {
                 ForEach(playerViewModel.primarySubtitles, id: \.self) { subtitle in
                     SubtitleUnitView(subtitle: subtitle)
                         .id(subtitle.index)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            playerViewModel.seek(to: subtitle.startTime, updateCurrentSubtitleIndex: true)
+                        }
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                 }
-                .listRowBackground(Color.clear.ignoresSafeArea())
                 .listRowSeparator(.hidden)
             }
-            .listStyle(PlainListStyle())
+            .introspect(.list, on: .iOS(.v13, .v14, .v15)) { tableView in
+                logger.info("15 \(type(of: tableView))") // UITableView
+                DispatchQueue.main.async {
+                    if let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
+                        lastVisibleIndex = lastVisibleIndexPath.row + 1
+                        logger.info("15 lastVisibleIndex: \(lastVisibleIndex)")
+                    }
+                }
+            }
+            .introspect(.list, on: .iOS(.v16, .v17)) {collectionView in
+                logger.info("16 \(type(of: collectionView))") // UICollectionView
+                if let lastVisibleIndexPath = collectionView.indexPathsForVisibleItems.last {
+                    if collectionView.cellForItem(at: lastVisibleIndexPath) != nil {
+                        lastVisibleIndex = lastVisibleIndexPath.row + 1
+                        logger.info("16 lastVisibleIndex: \(lastVisibleIndex)")
+                    }
+                }
+            }
+            .listStyle(.inset)
             .onReceive(playerViewModel.$currentSubtitleIndex) { newIndex in
                 logger.info("scrollto: \(newIndex)")
                 withAnimation {
-                    scrollView.scrollTo(newIndex, anchor: .center)
+                    if (newIndex >= lastVisibleIndex) {
+                        logger.info("do scrollto: \(newIndex)")
+                        scrollView.scrollTo(newIndex - 1, anchor: .top)
+                    } else if (newIndex < lastVisibleIndex){
+                        
+                    }
                 }
             }
         }.onAppear {
             playerViewModel.play(url: episode.url)
         }
     }
-    
 }
 
 struct SubtitleView_Previews: PreviewProvider {

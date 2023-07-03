@@ -14,24 +14,21 @@ struct SubtitleUnitView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            
-            Text("\(subtitle.index)-\(formatTime(time: subtitle.startTime))")
-                .font(.system(size: 15, weight: .bold, design: .rounded))
+            Text("\(subtitle.index)-\(formatTimeWithoutHour(time: subtitle.startTime))")
+                .font(.system(size: UIFont.preferredFont(forTextStyle: .caption1).pointSize, design: .serif))
                 .foregroundColor(.blue)
             
-            Text(subtitle.text)
-                .font(.system(size: 20, weight: .bold, design: .rounded))
-                .foregroundColor((playerViewModel.currentSubtitleIndex == subtitle.index) ? .green : .black)
+            Text(subtitle.text.trimmingCharacters(in: .whitespacesAndNewlines))
+                .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize, design: .default))
+                .foregroundColor((playerViewModel.currentSubtitleIndex == subtitle.index) ? .green : .primary)
                 .multilineTextAlignment(.leading)
-                .padding([.top, .bottom], 5)
             
-            Text(subtitle.text)
-                .font(.system(size: 18, weight: .bold, design: .rounded))
-                .foregroundColor(.gray)
+            Text(subtitle.text.trimmingCharacters(in: .whitespacesAndNewlines))
+                .font(.system(size: UIFont.preferredFont(forTextStyle: .callout).pointSize, design: .default))
+                .foregroundColor(.secondary)
                 .multilineTextAlignment(.leading)
-                .padding([.top, .bottom], 5)
-            
         }
+        .textSelection(.enabled)
     }
 }
 

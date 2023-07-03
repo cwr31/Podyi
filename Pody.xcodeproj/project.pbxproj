@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8400699A2A5080B8006BB696 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840069992A5080B8006BB696 /* Route.swift */; };
+		8400699C2A5080CF006BB696 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400699B2A5080CF006BB696 /* Router.swift */; };
+		8400699F2A51131C006BB696 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 8400699E2A51131C006BB696 /* SwiftUINavigation */; };
+		840069A12A51131C006BB696 /* SwiftUINavigationCore in Frameworks */ = {isa = PBXBuildFile; productRef = 840069A02A51131C006BB696 /* SwiftUINavigationCore */; };
+		840069A52A51BAB4006BB696 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840069A42A51BAB4006BB696 /* Test.swift */; };
+		840069A82A53098A006BB696 /* VisibilityTrackingScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 840069A72A53098A006BB696 /* VisibilityTrackingScrollView */; };
+		840069AB2A530BF0006BB696 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 840069AA2A530BF0006BB696 /* SwiftUIIntrospect */; };
 		84225E332A44080300A1EAB0 /* PodyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E322A44080300A1EAB0 /* PodyApp.swift */; };
 		84225E352A44080300A1EAB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E342A44080300A1EAB0 /* ContentView.swift */; };
 		84225E372A44080500A1EAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84225E362A44080500A1EAB0 /* Assets.xcassets */; };
@@ -29,6 +36,12 @@
 		844D429B2A4C6A4500C0DE25 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D429A2A4C6A4500C0DE25 /* PlayerViewModel.swift */; };
 		844D429E2A4C7C4700C0DE25 /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = 844D429D2A4C7C4700C0DE25 /* Popovers */; };
 		844D42A12A4C820100C0DE25 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 844D42A02A4C820100C0DE25 /* PopupView */; };
+		844D42A42A4D689800C0DE25 /* TranscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42A32A4D689800C0DE25 /* TranscriptionView.swift */; };
+		844D42AC2A4D73C400C0DE25 /* CacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42A82A4D73C400C0DE25 /* CacheAsyncImage.swift */; };
+		844D42AD2A4D73C400C0DE25 /* CacheImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42A92A4D73C400C0DE25 /* CacheImageLoader.swift */; };
+		844D42AE2A4D73C400C0DE25 /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42AA2A4D73C400C0DE25 /* PillView.swift */; };
+		844D42AF2A4D73C400C0DE25 /* AsynImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42AB2A4D73C400C0DE25 /* AsynImageView.swift */; };
+		84A1E5EA2A4E495D0097889B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1E5E92A4E495D0097889B /* Constants.swift */; };
 		84B852C32A48170B006DBE06 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C12A48170B006DBE06 /* Recorder.swift */; };
 		84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */; };
 		84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */; };
@@ -59,6 +72,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840069992A5080B8006BB696 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		8400699B2A5080CF006BB696 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		840069A42A51BAB4006BB696 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		84225E2F2A44080300A1EAB0 /* Pody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84225E322A44080300A1EAB0 /* PodyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodyApp.swift; sourceTree = "<group>"; };
 		84225E342A44080300A1EAB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +96,12 @@
 		844D42942A4B228B00C0DE25 /* SubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		844D42962A4B22C200C0DE25 /* SubtitleUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleUnitView.swift; sourceTree = "<group>"; };
 		844D429A2A4C6A4500C0DE25 /* PlayerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		844D42A32A4D689800C0DE25 /* TranscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionView.swift; sourceTree = "<group>"; };
+		844D42A82A4D73C400C0DE25 /* CacheAsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheAsyncImage.swift; sourceTree = "<group>"; };
+		844D42A92A4D73C400C0DE25 /* CacheImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheImageLoader.swift; sourceTree = "<group>"; };
+		844D42AA2A4D73C400C0DE25 /* PillView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
+		844D42AB2A4D73C400C0DE25 /* AsynImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynImageView.swift; sourceTree = "<group>"; };
+		84A1E5E92A4E495D0097889B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84B852C12A48170B006DBE06 /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiffWaveUtils.swift; sourceTree = "<group>"; };
 		84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperServiceV2.swift; sourceTree = "<group>"; };
@@ -94,10 +116,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				844D42A12A4C820100C0DE25 /* PopupView in Frameworks */,
+				840069A12A51131C006BB696 /* SwiftUINavigationCore in Frameworks */,
 				84225E892A4498C000A1EAB0 /* Logging in Frameworks */,
+				840069AB2A530BF0006BB696 /* SwiftUIIntrospect in Frameworks */,
 				844D429E2A4C7C4700C0DE25 /* Popovers in Frameworks */,
+				840069A82A53098A006BB696 /* VisibilityTrackingScrollView in Frameworks */,
 				84225E862A44609600A1EAB0 /* AudioKit in Frameworks */,
 				844D42912A4875C200C0DE25 /* Zip in Frameworks */,
+				8400699F2A51131C006BB696 /* SwiftUINavigation in Frameworks */,
 				84BEA38A2A483F8400EC8E8F /* SwiftWhisper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840069982A5080A4006BB696 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				840069992A5080B8006BB696 /* Route.swift */,
+				8400699B2A5080CF006BB696 /* Router.swift */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
 		84225E262A44080300A1EAB0 = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +227,11 @@
 		84225E662A440DA400A1EAB0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				844D42A62A4D73C400C0DE25 /* Common */,
+				844D42A52A4D73C400C0DE25 /* Home */,
+				844D42A22A4D686900C0DE25 /* Transcription */,
 				844D42922A4B225B00C0DE25 /* Player */,
+				840069A42A51BAB4006BB696 /* Test.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +282,40 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		844D42A22A4D686900C0DE25 /* Transcription */ = {
+			isa = PBXGroup;
+			children = (
+				844D42A32A4D689800C0DE25 /* TranscriptionView.swift */,
+			);
+			path = Transcription;
+			sourceTree = "<group>";
+		};
+		844D42A52A4D73C400C0DE25 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		844D42A62A4D73C400C0DE25 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				844D42A72A4D73C400C0DE25 /* CacheAsyncImage */,
+				844D42AA2A4D73C400C0DE25 /* PillView.swift */,
+				844D42AB2A4D73C400C0DE25 /* AsynImageView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		844D42A72A4D73C400C0DE25 /* CacheAsyncImage */ = {
+			isa = PBXGroup;
+			children = (
+				844D42A82A4D73C400C0DE25 /* CacheAsyncImage.swift */,
+				844D42A92A4D73C400C0DE25 /* CacheImageLoader.swift */,
+			);
+			path = CacheAsyncImage;
+			sourceTree = "<group>";
+		};
 		84B852BD2A4816F8006DBE06 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,8 +342,10 @@
 		84B852C02A48170B006DBE06 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				840069982A5080A4006BB696 /* Route */,
 				84B852C12A48170B006DBE06 /* Recorder.swift */,
 				84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */,
+				84A1E5E92A4E495D0097889B /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -313,6 +388,10 @@
 				844D42902A4875C200C0DE25 /* Zip */,
 				844D429D2A4C7C4700C0DE25 /* Popovers */,
 				844D42A02A4C820100C0DE25 /* PopupView */,
+				8400699E2A51131C006BB696 /* SwiftUINavigation */,
+				840069A02A51131C006BB696 /* SwiftUINavigationCore */,
+				840069A72A53098A006BB696 /* VisibilityTrackingScrollView */,
+				840069AA2A530BF0006BB696 /* SwiftUIIntrospect */,
 			);
 			productName = Pody;
 			productReference = 84225E2F2A44080300A1EAB0 /* Pody.app */;
@@ -396,6 +475,9 @@
 				844D428F2A4875C200C0DE25 /* XCRemoteSwiftPackageReference "Zip" */,
 				844D429C2A4C7C4700C0DE25 /* XCRemoteSwiftPackageReference "Popovers" */,
 				844D429F2A4C820100C0DE25 /* XCRemoteSwiftPackageReference "PopupView" */,
+				8400699D2A51131C006BB696 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+				840069A62A53098A006BB696 /* XCRemoteSwiftPackageReference "VisibilityTrackingScrollView" */,
+				840069A92A530BF0006BB696 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 			);
 			productRefGroup = 84225E302A44080300A1EAB0 /* Products */;
 			projectDirPath = "";
@@ -440,21 +522,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B852C32A48170B006DBE06 /* Recorder.swift in Sources */,
+				84A1E5EA2A4E495D0097889B /* Constants.swift in Sources */,
+				844D42AE2A4D73C400C0DE25 /* PillView.swift in Sources */,
 				84225E802A445FFB00A1EAB0 /* WhisperService.swift in Sources */,
 				84225E3C2A44080500A1EAB0 /* Persistence.swift in Sources */,
 				84225E7C2A445FD600A1EAB0 /* DownloadService.swift in Sources */,
 				84225E3F2A44080500A1EAB0 /* Pody.xcdatamodeld in Sources */,
 				84225E352A44080300A1EAB0 /* ContentView.swift in Sources */,
+				844D42A42A4D689800C0DE25 /* TranscriptionView.swift in Sources */,
+				8400699A2A5080B8006BB696 /* Route.swift in Sources */,
 				84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */,
 				84F9960F2A46F29F00E9AEBE /* Episode.swift in Sources */,
 				84225E332A44080300A1EAB0 /* PodyApp.swift in Sources */,
 				844D429B2A4C6A4500C0DE25 /* PlayerViewModel.swift in Sources */,
 				844D42972A4B22C200C0DE25 /* SubtitleUnitView.swift in Sources */,
 				84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */,
+				8400699C2A5080CF006BB696 /* Router.swift in Sources */,
 				84225E7E2A445FEB00A1EAB0 /* SubtitleService.swift in Sources */,
 				84225E7A2A445FAF00A1EAB0 /* Subtitle.swift in Sources */,
 				844D42952A4B228B00C0DE25 /* SubtitleView.swift in Sources */,
 				84225E8B2A45308A00A1EAB0 /* PlayerView.swift in Sources */,
+				844D42AC2A4D73C400C0DE25 /* CacheAsyncImage.swift in Sources */,
+				840069A52A51BAB4006BB696 /* Test.swift in Sources */,
+				844D42AF2A4D73C400C0DE25 /* AsynImageView.swift in Sources */,
+				844D42AD2A4D73C400C0DE25 /* CacheImageLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +879,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8400699D2A51131C006BB696 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		840069A62A53098A006BB696 /* XCRemoteSwiftPackageReference "VisibilityTrackingScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elegantchaos/VisibilityTrackingScrollView.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		840069A92A530BF0006BB696 /* XCRemoteSwiftPackageReference "swiftui-introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/swiftui-introspect";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
@@ -831,6 +946,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8400699E2A51131C006BB696 /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8400699D2A51131C006BB696 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+		840069A02A51131C006BB696 /* SwiftUINavigationCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8400699D2A51131C006BB696 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigationCore;
+		};
+		840069A72A53098A006BB696 /* VisibilityTrackingScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 840069A62A53098A006BB696 /* XCRemoteSwiftPackageReference "VisibilityTrackingScrollView" */;
+			productName = VisibilityTrackingScrollView;
+		};
+		840069AA2A530BF0006BB696 /* SwiftUIIntrospect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 840069A92A530BF0006BB696 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
+			productName = SwiftUIIntrospect;
+		};
 		84225E852A44609600A1EAB0 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */;

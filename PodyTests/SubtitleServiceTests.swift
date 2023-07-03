@@ -5,17 +5,17 @@
 ////  Created by cwr on 2023/6/24.
 ////
 //
-//import XCTest
+// import XCTest
 ////@testable import Pody
 //
 //
-//final class SubtitleServiceTests: XCTestCase {
-//    
-//    
+// final class SubtitleServiceTests: XCTestCase {
+//
+//
 ////    override func setUpWithError() throws {
 ////        // Put setup code here. This method is called before the invocation of each test method in the class.
 ////    }
-////    
+////
 ////    override func tearDownWithError() throws {
 ////        // Put teardown code here. This method is called after the invocation of each test method in the class.
 ////    }
@@ -34,10 +34,10 @@
 ////            // Put the code you want to measure the time of here.
 ////        }
 ////    }
-//    
+//
 //    func testBisectLeft() {
 //        print("nimabide")
-//                
+//
 //        let subtitles = [
 //            Subtitle(index: 1, startTime: 0.001, endTime: 1.8, text: "- [Voice-Over 1] After the Civil War"),
 //            Subtitle(index: 2, startTime: 1.8, endTime: 4.41, text: "many of the Plains Indians were moved to Oklahoma"),
@@ -48,14 +48,14 @@
 //            Subtitle(index: 7, startTime: 11.85, endTime: 13.15, text: "that pushed people out"),
 //            Subtitle(index: 8, startTime: 14.58, endTime: 17.373, text: "or the novel about a homicide and a drought")
 //        ]
-//        
+//
 //        let currentTime: TimeInterval = 5.0
-//        
+//
 //        if let subtitle = bisectLeft(subtitles: subtitles, currentTime: currentTime) {
 //            XCTAssertEqual(subtitle.text, "with a story that you should know about")
 //        } else {
 //            XCTFail("No subtitle found for the current time.")
 //        }
 //    }
-//    
-//}
+//
+// }
