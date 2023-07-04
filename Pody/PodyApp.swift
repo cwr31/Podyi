@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PodcastIndexKit
 
 @main
 struct PodyApp: App {
@@ -18,6 +19,7 @@ struct PodyApp: App {
             ContentView()
                 .environmentObject(PlayerViewModel())
                 .environmentObject(Router())
+                .environmentObject(PodcastIndexService())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

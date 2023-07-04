@@ -14,6 +14,8 @@
 		840069A52A51BAB4006BB696 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840069A42A51BAB4006BB696 /* Test.swift */; };
 		840069A82A53098A006BB696 /* VisibilityTrackingScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = 840069A72A53098A006BB696 /* VisibilityTrackingScrollView */; };
 		840069AB2A530BF0006BB696 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 840069AA2A530BF0006BB696 /* SwiftUIIntrospect */; };
+		840069AE2A53993B006BB696 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = 840069AD2A53993B006BB696 /* PodcastIndexKit */; };
+		840069B02A539A2B006BB696 /* PodcastIndexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840069AF2A539A2B006BB696 /* PodcastIndexService.swift */; };
 		84225E332A44080300A1EAB0 /* PodyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E322A44080300A1EAB0 /* PodyApp.swift */; };
 		84225E352A44080300A1EAB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E342A44080300A1EAB0 /* ContentView.swift */; };
 		84225E372A44080500A1EAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84225E362A44080500A1EAB0 /* Assets.xcassets */; };
@@ -75,6 +77,7 @@
 		840069992A5080B8006BB696 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		8400699B2A5080CF006BB696 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		840069A42A51BAB4006BB696 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		840069AF2A539A2B006BB696 /* PodcastIndexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastIndexService.swift; sourceTree = "<group>"; };
 		84225E2F2A44080300A1EAB0 /* Pody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84225E322A44080300A1EAB0 /* PodyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodyApp.swift; sourceTree = "<group>"; };
 		84225E342A44080300A1EAB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			files = (
 				844D42A12A4C820100C0DE25 /* PopupView in Frameworks */,
 				840069A12A51131C006BB696 /* SwiftUINavigationCore in Frameworks */,
+				840069AE2A53993B006BB696 /* PodcastIndexKit in Frameworks */,
 				84225E892A4498C000A1EAB0 /* Logging in Frameworks */,
 				840069AB2A530BF0006BB696 /* SwiftUIIntrospect in Frameworks */,
 				844D429E2A4C7C4700C0DE25 /* Popovers in Frameworks */,
@@ -252,6 +256,7 @@
 				84225E7D2A445FEB00A1EAB0 /* SubtitleService.swift */,
 				84225E7F2A445FFB00A1EAB0 /* WhisperService.swift */,
 				84BEA3852A481DEB00EC8E8F /* WhisperServiceV2.swift */,
+				840069AF2A539A2B006BB696 /* PodcastIndexService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				840069A02A51131C006BB696 /* SwiftUINavigationCore */,
 				840069A72A53098A006BB696 /* VisibilityTrackingScrollView */,
 				840069AA2A530BF0006BB696 /* SwiftUIIntrospect */,
+				840069AD2A53993B006BB696 /* PodcastIndexKit */,
 			);
 			productName = Pody;
 			productReference = 84225E2F2A44080300A1EAB0 /* Pody.app */;
@@ -478,6 +484,7 @@
 				8400699D2A51131C006BB696 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
 				840069A62A53098A006BB696 /* XCRemoteSwiftPackageReference "VisibilityTrackingScrollView" */,
 				840069A92A530BF0006BB696 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
+				840069AC2A53993B006BB696 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */,
 			);
 			productRefGroup = 84225E302A44080300A1EAB0 /* Products */;
 			projectDirPath = "";
@@ -526,6 +533,7 @@
 				844D42AE2A4D73C400C0DE25 /* PillView.swift in Sources */,
 				84225E802A445FFB00A1EAB0 /* WhisperService.swift in Sources */,
 				84225E3C2A44080500A1EAB0 /* Persistence.swift in Sources */,
+				840069B02A539A2B006BB696 /* PodcastIndexService.swift in Sources */,
 				84225E7C2A445FD600A1EAB0 /* DownloadService.swift in Sources */,
 				84225E3F2A44080500A1EAB0 /* Pody.xcdatamodeld in Sources */,
 				84225E352A44080300A1EAB0 /* ContentView.swift in Sources */,
@@ -903,6 +911,14 @@
 				kind = branch;
 			};
 		};
+		840069AC2A53993B006BB696 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SparrowTek/PodcastIndexKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
@@ -965,6 +981,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 840069A92A530BF0006BB696 /* XCRemoteSwiftPackageReference "swiftui-introspect" */;
 			productName = SwiftUIIntrospect;
+		};
+		840069AD2A53993B006BB696 /* PodcastIndexKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 840069AC2A53993B006BB696 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */;
+			productName = PodcastIndexKit;
 		};
 		84225E852A44609600A1EAB0 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;

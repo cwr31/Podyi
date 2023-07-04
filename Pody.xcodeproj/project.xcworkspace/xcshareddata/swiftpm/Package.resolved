@@ -11,6 +11,24 @@
         }
       },
       {
+        "package": "Get",
+        "repositoryURL": "https://github.com/kean/Get",
+        "state": {
+          "branch": null,
+          "revision": "12830cc64f31789ae6f4352d2d51d03a25fc3741",
+          "version": "2.1.6"
+        }
+      },
+      {
+        "package": "PodcastIndexKit",
+        "repositoryURL": "https://github.com/SparrowTek/PodcastIndexKit",
+        "state": {
+          "branch": "main",
+          "revision": "ebfcaa1fc8f6afe0ae1a3cc4abd3912ed18b45c9",
+          "version": null
+        }
+      },
+      {
         "package": "Popovers",
         "repositoryURL": "https://github.com/aheze/Popovers",
         "state": {
@@ -35,6 +53,15 @@
           "branch": null,
           "revision": "fc45e7b2cfece9dd80b5a45e6469ffe67fe67984",
           "version": "0.14.1"
+        }
+      },
+      {
+        "package": "swift-crypto",
+        "repositoryURL": "https://github.com/apple/swift-crypto",
+        "state": {
+          "branch": null,
+          "revision": "33a20e650c33f6d72d822d558333f2085effa3dc",
+          "version": "2.5.0"
         }
       },
       {
