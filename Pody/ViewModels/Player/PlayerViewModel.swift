@@ -34,8 +34,7 @@ class PlayerViewModel: ObservableObject {
         URL(string: "YOUR_AUDIO_URL_3")!,
     ]
     var player: AVPlayer
-    var primarySubtitles: [Subtitle] = []
-    var secondrySubtitles: [Subtitle] = []
+    var subtitles: [Subtitle] = []
     var subtitleStartTimes: [NSValue] = []
     var periodicTimeObserver: Any?
     var boundaryTimeObserver: Any?
@@ -48,11 +47,15 @@ class PlayerViewModel: ObservableObject {
     func play(url: URL) {
         playerItem = AVPlayerItem(url: url)
         /// 初始化字幕文件和字幕位置
-        primarySubtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
-        secondrySubtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
+        var subtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
+        var secondrySubtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
         for item in primarySubtitles {
             let cmTime = CMTime(seconds: item.startTime, preferredTimescale: 1)
             subtitleStartTimes.append(NSValue(time: cmTime))
+        }
+        // 将secondrySubtitles的text，放到primarySubtitles的text_1中
+        for i in 0..<subtitles.count {
+            subtitles[i].text_1 = secondrySubtitles[i].text
         }
         
         player.replaceCurrentItem(with: playerItem)

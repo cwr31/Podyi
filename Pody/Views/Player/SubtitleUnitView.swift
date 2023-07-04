@@ -17,13 +17,13 @@ struct SubtitleUnitView: View {
             Text("\(subtitle.index)-\(formatTimeWithoutHour(time: subtitle.startTime))")
                 .font(.system(size: UIFont.preferredFont(forTextStyle: .caption1).pointSize, design: .serif))
                 .foregroundColor(.blue)
-            
+
             Text(subtitle.text.trimmingCharacters(in: .whitespacesAndNewlines))
                 .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize, design: .default))
                 .foregroundColor((playerViewModel.currentSubtitleIndex == subtitle.index) ? .green : .primary)
                 .multilineTextAlignment(.leading)
             
-            Text(subtitle.text.trimmingCharacters(in: .whitespacesAndNewlines))
+            Text(subtitle.text_1.trimmingCharacters(in: .whitespacesAndNewlines))
                 .font(.system(size: UIFont.preferredFont(forTextStyle: .callout).pointSize, design: .default))
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.leading)

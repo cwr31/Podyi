@@ -10,6 +10,11 @@ import Logging
 
 let logger = Logger(label: "subtitleService")
 
+struct SubtitleSet {
+    var primarySubtitles: [Subtitle]
+    var secondarySubtitles: [Subtitle]
+}
+
 func findSubtitle(subtitles: [Subtitle], currentTime: Double) -> Subtitle? {
     var left = 0
     var right = subtitles.count - 1
@@ -85,14 +90,27 @@ func subtitlesToSrt(subtitles: [Subtitle]) -> String {
 }
 
 /// 从0.0 -> 00:00:00,000
-func formatTime(time: TimeInterval) -> String {
-    let milliseconds = Int(time.truncatingRemainder(dividingBy: 1) * 1000)
+/// 字幕withMs必须是true，满足字幕的格式
+func formatTime(time: TimeInterval, withMs: Bool? = true) -> String {
     let seconds = Int(time) % 60
     let minutes = (Int(time) / 60) % 60
     let hours = (Int(time) / 3600)
 
-    let srtString = String(format: "%02d:%02d:%02d,%03d", hours, minutes, seconds, milliseconds)
-    return srtString
+    if withMs {
+        let milliseconds = Int(time.truncatingRemainder(dividingBy: 1) * 1000)
+        let srtString = String(format: "%02d:%02d:%02d,%03d", hours, minutes, seconds, milliseconds)
+        return srtString
+    } else {
+        // 小时没有的时候，不显示小时
+        if (hours == 0) {
+            let srtString = String(format: "%02d:%02d", minutes, seconds)
+            return srtString
+        } else {
+            let hoursFormat = (hours < 10) ? "%01d" : (hours < 100) ? "%02d" : "%03d"
+            let srtString = String(format: "\(hoursFormat):%02d:%02d", hours, minutes, seconds)
+            return srtString
+        }
+    }
 }
 
 func formatTimeWithoutHour(time: TimeInterval) -> String {

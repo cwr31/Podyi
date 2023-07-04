@@ -12,6 +12,8 @@ class Subtitle: Hashable {
     var startTime: TimeInterval
     var endTime: TimeInterval
     var text: String
+    /// 翻译后的字幕
+    var text_1: String?
 
     init(index: Int, startTime: TimeInterval, endTime: TimeInterval, text: String) {
         self.index = index

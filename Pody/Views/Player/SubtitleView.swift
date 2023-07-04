@@ -19,7 +19,7 @@ struct SubtitleView: View {
     var body: some View {
         ScrollViewReader { scrollView in
             List {
-                ForEach(playerViewModel.primarySubtitles, id: \.self) { subtitle in
+                ForEach(playerViewModel.subtitles, id: \.self) { subtitle in
                     SubtitleUnitView(subtitle: subtitle)
                         .id(subtitle.index)
                         .frame(maxWidth: .infinity, alignment: .leading)
