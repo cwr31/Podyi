@@ -23,6 +23,9 @@ class PodcastIndexService : ObservableObject {
     func search () async {
         do {
             let podia : PodcastArrayResponse = try await podi.searchService.search(byTerm: "all ears")
+            if (podia.status == true) {
+                podia.feeds
+            }
             print(podia)
         } catch {
             
