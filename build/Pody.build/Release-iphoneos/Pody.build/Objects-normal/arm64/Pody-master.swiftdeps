@@ -1,0 +1,26 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "41bc4877ead68f84999f059cfd5cc1708366b975e3c18a2868e09a6795794f18"
+build_start_time: [1688021436, 17231000]
+build_end_time: [1688021436, 49099000]
+inputs:
+  "/Users/cwr/Desktop/Pody/Pody/ContentView.swift": !dirty [1688007450, 671353321]
+  "/Users/cwr/Desktop/Pody/Pody/Models/Episode.swift": !dirty [1687875987, 298230686]
+  "/Users/cwr/Desktop/Pody/Pody/Models/Subtitle.swift": !dirty [1687863932, 383267805]
+  "/Users/cwr/Desktop/Pody/Pody/Persistence.swift": !dirty [1687863862, 930709586]
+  "/Users/cwr/Desktop/Pody/Pody/PodyApp.swift": !dirty [1687958241, 125247198]
+  "/Users/cwr/Desktop/Pody/Pody/Services/DownloadService.swift": !dirty [1688020557, 989453732]
+  "/Users/cwr/Desktop/Pody/Pody/Services/SubtitleService.swift": !dirty [1687863862, 939731734]
+  "/Users/cwr/Desktop/Pody/Pody/Services/WhisperService.swift": !dirty [1687863932, 402281757]
+  "/Users/cwr/Desktop/Pody/Pody/Services/WhisperServiceV2.swift": !dirty [1687863862, 936790809]
+  "/Users/cwr/Desktop/Pody/Pody/Utils/Recorder.swift": !dirty [1687863862, 927251417]
+  "/Users/cwr/Desktop/Pody/Pody/Utils/RiffWaveUtils.swift": !dirty [1688007741, 755527423]
+  "/Users/cwr/Desktop/Pody/Pody/ViewModels/Player/PlayerViewModel.swift": !dirty [1687996221, 183732250]
+  "/Users/cwr/Desktop/Pody/Pody/Views/Player/PlayerView.swift": !dirty [1687996250, 143076346]
+  "/Users/cwr/Desktop/Pody/Pody/Views/Player/SubtitleUnitView.swift": !dirty [1687958329, 45048894]
+  "/Users/cwr/Desktop/Pody/Pody/Views/Player/SubtitleView.swift": !dirty [1687996380, 386598140]
+  ? "/Users/cwr/Desktop/Pody/build/Pody.build/Release-iphoneos/Pody.build/DerivedSources/CoreDataGenerated/Pody/Item+CoreDataClass.swift"
+  : !dirty [1688021435, 948108066]
+  ? "/Users/cwr/Desktop/Pody/build/Pody.build/Release-iphoneos/Pody.build/DerivedSources/CoreDataGenerated/Pody/Item+CoreDataProperties.swift"
+  : !dirty [1688021435, 948608446]
+  ? "/Users/cwr/Desktop/Pody/build/Pody.build/Release-iphoneos/Pody.build/DerivedSources/CoreDataGenerated/Pody/Pody+CoreDataModel.swift"
+  : !dirty [1688021435, 946768220]

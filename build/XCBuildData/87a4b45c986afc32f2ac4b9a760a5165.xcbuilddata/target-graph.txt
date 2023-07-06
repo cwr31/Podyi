@@ -1,0 +1,32 @@
+Target dependency graph (15 targets)
+PopupView in PopupView, no dependencies
+PopupView in PopupView, depends on:
+PopupView in PopupView (explicit)
+Logging in swift-log, no dependencies
+Logging in swift-log, depends on:
+Logging in swift-log (explicit)
+Popovers in Popovers, no dependencies
+Popovers in Popovers, depends on:
+Popovers in Popovers (explicit)
+AudioKit in AudioKit, no dependencies
+AudioKit in AudioKit, depends on:
+AudioKit in AudioKit (explicit)
+Minizip in Zip, no dependencies
+Zip in Zip, depends on:
+Minizip in Zip (explicit)
+Zip in Zip, depends on:
+Zip in Zip (explicit)
+Minizip in Zip (explicit)
+whisper_cpp in SwiftWhisper, no dependencies
+SwiftWhisper in SwiftWhisper, depends on:
+whisper_cpp in SwiftWhisper (explicit)
+SwiftWhisper in SwiftWhisper, depends on:
+SwiftWhisper in SwiftWhisper (explicit)
+whisper_cpp in SwiftWhisper (explicit)
+Pody in Pody, depends on:
+PopupView in PopupView (explicit)
+Logging in swift-log (explicit)
+Popovers in Popovers (explicit)
+AudioKit in AudioKit (explicit)
+Zip in Zip (explicit)
+SwiftWhisper in SwiftWhisper (explicit)
