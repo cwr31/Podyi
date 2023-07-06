@@ -91,7 +91,7 @@ func subtitlesToSrt(subtitles: [Subtitle]) -> String {
 
 /// 从0.0 -> 00:00:00,000
 /// 字幕withMs必须是true，满足字幕的格式
-func formatTime(time: TimeInterval, withMs: Bool? = true) -> String {
+func formatTime(time: TimeInterval, withMs: Bool = true) -> String {
     let seconds = Int(time) % 60
     let minutes = (Int(time) / 60) % 60
     let hours = (Int(time) / 3600)
@@ -115,7 +115,7 @@ func formatTime(time: TimeInterval, withMs: Bool? = true) -> String {
 
 func formatTimeWithoutHour(time: TimeInterval) -> String {
     let totalSeconds = Int(time)
-    let minutes = (totalSeconds / 60) % 60
+    let minutes = (totalSeconds / 60)
     let time = totalSeconds % 60
 
     let formattedString = String(format: "%02d:%02d", minutes, time)

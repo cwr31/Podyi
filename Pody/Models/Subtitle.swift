@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum SubtitleMode {
+    case primary, secondary, both, none
+}
+
 class Subtitle: Hashable {
     var index: Int
     var startTime: TimeInterval
@@ -15,7 +19,7 @@ class Subtitle: Hashable {
     /// 翻译后的字幕
     var text_1: String?
 
-    init(index: Int, startTime: TimeInterval, endTime: TimeInterval, text: String) {
+    init(index: Int, startTime: TimeInterval, endTime: TimeInterval, text: String, text_1 : String? = "") {
         self.index = index
         self.startTime = startTime
         self.endTime = endTime

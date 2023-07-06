@@ -23,7 +23,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $tabSelection) {
-                NavigationLink (destination: PlayerView()){
+                NavigationLink (destination: PlayerView(episode: Episode(id: 1, url: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3"), author: "All ears", duration: 1000.0, transcribed: true, primarySubtitles: [], secondarySubtitles: []))){
                     Text("Tap me")
                 }
                 .navigationBarTitle("Home")

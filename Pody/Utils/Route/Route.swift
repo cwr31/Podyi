@@ -21,9 +21,9 @@ extension Route: View {
     var body: some View {
         switch self {
         case .home:
-            PlayerView()
+            PlayerView(episode: Episode(id: 1, url: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3"), author: "All ears", duration: 1000.0, transcribed: true, primarySubtitles: [], secondarySubtitles: []))
         case .detail(let id, let type):
-            PlayerView()
+            Test()
         }
     }
 }

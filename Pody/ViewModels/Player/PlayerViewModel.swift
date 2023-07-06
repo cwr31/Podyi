@@ -16,24 +16,27 @@ class PlayerViewModel: ObservableObject {
     
     @Published var isPlaying = false
     @Published var currentTime: Double = 0
-    @Published var totalDuration: Double = 60
+    @Published var totalDuration: Double = 60 * 60 * 12
     @Published var hasPrevious = false
     @Published var hasNext = false
     @Published var shouldScrollToCurrent = true
     /// srt 的index从1开始
     @Published var currentSubtitleIndex = 1
+    // 字幕的类型
+    @Published var subtitleMode: SubtitleMode = .primary
     // @Published var playbackSpeed: Float = 1.0
     
     //    var wavFilePath = FileManager.default.playList(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3")
     
-    private var playerItem: AVPlayerItem?
-    private var currentEpisodeIndex = 0
-    private var playList = [
-        URL(string: "YOUR_AUDIO_URL_1")!,
+    var player: AVPlayer
+    var playerItem: AVPlayerItem?
+    var currentEpisodeIndex = 0
+    var playList = [
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3"),
         URL(string: "YOUR_AUDIO_URL_2")!,
         URL(string: "YOUR_AUDIO_URL_3")!,
     ]
-    var player: AVPlayer
+    
     var subtitles: [Subtitle] = []
     var subtitleStartTimes: [NSValue] = []
     var periodicTimeObserver: Any?
@@ -44,20 +47,8 @@ class PlayerViewModel: ObservableObject {
         player = AVPlayer()
     }
     
-    func play(url: URL) {
-        playerItem = AVPlayerItem(url: url)
-        /// 初始化字幕文件和字幕位置
-        var subtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
-        var secondrySubtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
-        for item in primarySubtitles {
-            let cmTime = CMTime(seconds: item.startTime, preferredTimescale: 1)
-            subtitleStartTimes.append(NSValue(time: cmTime))
-        }
-        // 将secondrySubtitles的text，放到primarySubtitles的text_1中
-        for i in 0..<subtitles.count {
-            subtitles[i].text_1 = secondrySubtitles[i].text
-        }
-        
+    func play() {
+        playerItem = AVPlayerItem(url: playList[currentEpisodeIndex])
         player.replaceCurrentItem(with: playerItem)
         player.play()
         
@@ -75,7 +66,6 @@ class PlayerViewModel: ObservableObject {
                 logger.error("unknown status")
             }
         }
-        
         isPlaying = true
         startProgress()
         logger.info("totalDuration \(totalDuration)")
@@ -83,13 +73,31 @@ class PlayerViewModel: ObservableObject {
         hasNext = currentEpisodeIndex < playList.count - 1
     }
     
+    func loadSubtitles() {
+        /// 初始化字幕文件和字幕位置
+        let url = playList[currentEpisodeIndex]
+        subtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
+        let secondrySubtitles = loadSubtitle(fromFile: url.deletingPathExtension().appendingPathExtension("en.srt"))
+        for item in subtitles {
+            let cmTime = CMTime(seconds: item.startTime, preferredTimescale: 1)
+            subtitleStartTimes.append(NSValue(time: cmTime))
+        }
+        // 将secondrySubtitles的text，放到primarySubtitles的text_1中
+        for i in 0..<subtitles.count {
+            subtitles[i].text_1 = secondrySubtitles[i].text
+        }
+        startScroll()
+    }
+    
     func togglePlayback() {
         if isPlaying {
             player.pause()
             stopProgress()
+            stopScroll()
         } else {
             player.play()
             startProgress()
+            startScroll()
         }
         
         isPlaying.toggle()
@@ -101,7 +109,7 @@ class PlayerViewModel: ObservableObject {
         }
         
         currentEpisodeIndex += 1
-        play(url: playList[currentEpisodeIndex])
+        play()
     }
     
     func previous() {
@@ -110,32 +118,32 @@ class PlayerViewModel: ObservableObject {
         }
         
         currentEpisodeIndex -= 1
-        play(url: playList[currentEpisodeIndex])
+        play()
     }
     
     /// 从当前字幕开始，向后寻找下一个字幕
     func nextSubtitle() {
-        guard currentSubtitleIndex - 1 < primarySubtitles.count else {
+        guard currentSubtitleIndex - 1 < subtitles.count else {
             return
         }
         
-        seek(to: primarySubtitles[currentSubtitleIndex].startTime)
+        seek(to: subtitles[currentSubtitleIndex].startTime)
         currentSubtitleIndex += 1
     }
     
     /// 从当前字幕开始，向前寻找上一个字幕
     func previousSubtitle() {
-        if primarySubtitles.count == 0 {
+        if subtitles.count == 0 {
             return
         }
         if currentSubtitleIndex == 1 {
-            seek(to: primarySubtitles[0].startTime)
+            seek(to: subtitles[0].startTime)
         }
         guard currentSubtitleIndex - 1 > 0 else {
             return
         }
         
-        seek(to: primarySubtitles[currentSubtitleIndex - 2].startTime)
+        seek(to: subtitles[currentSubtitleIndex - 2].startTime)
         currentSubtitleIndex -= 1
     }
     
@@ -144,7 +152,7 @@ class PlayerViewModel: ObservableObject {
         let cmTime = CMTime(seconds: time, preferredTimescale: 1000)
         player.seek(to: cmTime)
         if (updateCurrentSubtitleIndex) {
-            guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: time) else { return }
+            guard let subtitle = findSubtitle(subtitles: subtitles, currentTime: time) else { return }
             if subtitle.index != currentSubtitleIndex {
                 currentSubtitleIndex = subtitle.index
             }
@@ -161,13 +169,19 @@ class PlayerViewModel: ObservableObject {
             //            if subtitle.index != currentSubtitleIndex {
             //                currentSubtitleIndex = subtitle.index
         }
-        
+    }
+    
+    func stopProgress() {
+        player.removeTimeObserver(periodicTimeObserver)
+    }
+    
+    func startScroll() {
         if subtitleStartTimes.count > 0 {
             boundaryTimeObserver = player.addBoundaryTimeObserver(forTimes: subtitleStartTimes, queue: .main)
             { [weak self] in
                 guard let self else { return }
                 self.currentTime = CMTimeGetSeconds(player.currentTime())
-                guard let subtitle = findSubtitle(subtitles: primarySubtitles, currentTime: currentTime) else { return }
+                guard let subtitle = findSubtitle(subtitles: subtitles, currentTime: currentTime) else { return }
                 
                 if subtitle.index != currentSubtitleIndex {
                     currentSubtitleIndex = subtitle.index
@@ -176,15 +190,16 @@ class PlayerViewModel: ObservableObject {
         }
     }
     
+    func stopScroll() {
+        if subtitleStartTimes.count > 0 {
+            player.removeTimeObserver(boundaryTimeObserver)
+        }
+    }
+    
     
     func setPlaybackSpeed(to speed: Float) {
         player.rate = speed
     }
     
-    func stopProgress() {
-        player.removeTimeObserver(periodicTimeObserver)
-        if subtitleStartTimes.count > 0 {
-            player.removeTimeObserver(boundaryTimeObserver)
-        }
-    }
+    
 }

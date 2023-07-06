@@ -50,6 +50,38 @@
             endingLineNumber = "29"
             landmarkName = "search()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "507E2116-F671-4937-8145-24CE6115CCC2 - a9214abce8de55b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Pody.PodcastIndexService.search() async -&gt; ()"
+                  moduleName = "Pody"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cwr/Desktop/Pody/Pody/Services/PodcastIndexService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "507E2116-F671-4937-8145-24CE6115CCC2 - a9214abce8de555c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Pody.PodcastIndexService.search() async -&gt; ()"
+                  moduleName = "Pody"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cwr/Desktop/Pody/Pody/Services/PodcastIndexService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
