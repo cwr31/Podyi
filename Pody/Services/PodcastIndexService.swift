@@ -22,15 +22,44 @@ class PodcastIndexService : ObservableObject {
     
     func search () async {
         do {
-            let podia : PodcastArrayResponse = try await podi.searchService.search(byTerm: "all ears")
-            if (podia.status == true) {
-                podia.feeds
+            let podcastArrayRes : PodcastArrayResponse = try await podi.searchService.search(byTerm: "all ears")
+            if (podcastArrayRes.status == true) {
+                return podcastArrayRes.feeds
+            } esle {
+                return []
             }
-            print(podia)
         } catch {
             
         }
     }
+
+    func getEpisodes (feedUrl: String) async {
+        do {
+            let episodeArrayRes : EpisodeArrayResponse = try await podi.episodeService.byFeedUrl(feedUrl: feedUrl)
+            if (episodeArrayRes.status == true) {
+                return episodeArrayRes.items
+            } else {
+                return []
+            }
+        } catch {
+            
+        }
+    }
+
+    func getEpisode (feedUrl: String, guid: String) async {
+        do {
+            let episodeRes : EpisodeResponse = try await podi.episodeService.byFeedUrlAndGuid(feedUrl: feedUrl, guid: guid)
+            if (episodeRes.status == true) {
+                return episodeRes.item
+            } else {
+                return nil
+            }
+        } catch {
+            
+        }
+    }
+
+    
     
     
 }
