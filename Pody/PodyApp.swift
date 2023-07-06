@@ -5,8 +5,8 @@
 //  Created by cwr on 2023/6/22.
 //
 
-import SwiftUI
 import PodcastIndexKit
+import SwiftUI
 
 @main
 struct PodyApp: App {

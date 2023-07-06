@@ -11,11 +11,11 @@ import SwiftUI
 final class Router: ObservableObject {
     @Published var routes = [Route]()
     @Published var selectedTab: Tabs = .home
-    
+
     func push(_ screen: Route) {
         routes.append(screen)
     }
-    
+
     func pushReplacement(_ screen: Route) {
         if routes.isEmpty {
             routes.append(screen)
@@ -23,11 +23,11 @@ final class Router: ObservableObject {
             routes[routes.count - 1] = screen
         }
     }
-    
+
     func pop() {
         routes.removeLast()
     }
-    
+
     func popUntil(predicate: (Route) -> Bool) {
         if let last = routes.popLast() {
             guard predicate(last) else {
@@ -36,7 +36,7 @@ final class Router: ObservableObject {
             }
         }
     }
-    
+
     func reset() {
         routes = []
     }

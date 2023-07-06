@@ -13,17 +13,17 @@ struct ContentView: View {
     @State var tabSelection: Tabs = .home
     @EnvironmentObject private var router: Router
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default
     )
     private var items: FetchedResults<Item>
-    
+
     var body: some View {
         NavigationView {
             TabView(selection: $tabSelection) {
-                NavigationLink (destination: PlayerView(episode: Episode(id: 1, url: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3"), author: "All ears", duration: 1000.0, transcribed: true, primarySubtitles: [], secondarySubtitles: []))){
+                NavigationLink(destination: PlayerView(episode: Episode(id: 1, url: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3"), author: "All ears", duration: 1000.0, transcribed: true, primarySubtitles: [], secondarySubtitles: []))) {
                     Text("Tap me")
                 }
                 .navigationBarTitle("Home")
@@ -31,16 +31,15 @@ struct ContentView: View {
                     Label("Sons", systemImage: "speaker.wave.3.fill")
                 }
                 .tag(0)
-                
+
                 Test()
                     .tabItem {
                         Label("Sons", systemImage: "music.quarternote.3")
                     }
                     .tag(1)
-                
-                
+
                 Text("2")
-                
+
                     .tabItem {
                         Label("Sons", systemImage: "chart.line.uptrend.xyaxis")
                     }
@@ -49,12 +48,12 @@ struct ContentView: View {
             .navigationViewStyle(.stack)
         }
     }
-    
+
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-            
+
             do {
                 try viewContext.save()
             } catch {
@@ -65,11 +64,11 @@ struct ContentView: View {
             }
         }
     }
-    
+
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-            
+
             do {
                 try viewContext.save()
             } catch {

@@ -16,6 +16,10 @@
 		840069AB2A530BF0006BB696 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 840069AA2A530BF0006BB696 /* SwiftUIIntrospect */; };
 		840069AE2A53993B006BB696 /* PodcastIndexKit in Frameworks */ = {isa = PBXBuildFile; productRef = 840069AD2A53993B006BB696 /* PodcastIndexKit */; };
 		840069B02A539A2B006BB696 /* PodcastIndexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840069AF2A539A2B006BB696 /* PodcastIndexService.swift */; };
+		8419E9CA2A56A79F00740154 /* MRAttributedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419E9C92A56A79F00740154 /* MRAttributedTextView.swift */; };
+		8419E9CD2A56AB7C00740154 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 8419E9CC2A56AB7C00740154 /* WrappingHStack */; };
+		8419E9D02A56FAAB00740154 /* SmartString in Frameworks */ = {isa = PBXBuildFile; productRef = 8419E9CF2A56FAAB00740154 /* SmartString */; };
+		8419E9D22A57026D00740154 /* TappableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419E9D12A57026D00740154 /* TappableText.swift */; };
 		84225E332A44080300A1EAB0 /* PodyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E322A44080300A1EAB0 /* PodyApp.swift */; };
 		84225E352A44080300A1EAB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E342A44080300A1EAB0 /* ContentView.swift */; };
 		84225E372A44080500A1EAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84225E362A44080500A1EAB0 /* Assets.xcassets */; };
@@ -43,6 +47,12 @@
 		844D42AD2A4D73C400C0DE25 /* CacheImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42A92A4D73C400C0DE25 /* CacheImageLoader.swift */; };
 		844D42AE2A4D73C400C0DE25 /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42AA2A4D73C400C0DE25 /* PillView.swift */; };
 		844D42AF2A4D73C400C0DE25 /* AsynImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D42AB2A4D73C400C0DE25 /* AsynImageView.swift */; };
+		848735622A566DAC0073EBC8 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487355C2A566DAC0073EBC8 /* CustomSlider.swift */; };
+		848735632A566DAC0073EBC8 /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487355D2A566DAC0073EBC8 /* VolumeSlider.swift */; };
+		848735642A566DAC0073EBC8 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487355E2A566DAC0073EBC8 /* Double+Extension.swift */; };
+		848735652A566DAC0073EBC8 /* SlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8487355F2A566DAC0073EBC8 /* SlidersView.swift */; };
+		848735662A566DAC0073EBC8 /* MusicProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848735602A566DAC0073EBC8 /* MusicProgressSlider.swift */; };
+		848735672A566DAC0073EBC8 /* VerticalVolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848735612A566DAC0073EBC8 /* VerticalVolumeSlider.swift */; };
 		84A1E5EA2A4E495D0097889B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1E5E92A4E495D0097889B /* Constants.swift */; };
 		84B852C32A48170B006DBE06 /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C12A48170B006DBE06 /* Recorder.swift */; };
 		84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */; };
@@ -78,6 +88,8 @@
 		8400699B2A5080CF006BB696 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		840069A42A51BAB4006BB696 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		840069AF2A539A2B006BB696 /* PodcastIndexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastIndexService.swift; sourceTree = "<group>"; };
+		8419E9C92A56A79F00740154 /* MRAttributedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRAttributedTextView.swift; sourceTree = "<group>"; };
+		8419E9D12A57026D00740154 /* TappableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableText.swift; sourceTree = "<group>"; };
 		84225E2F2A44080300A1EAB0 /* Pody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84225E322A44080300A1EAB0 /* PodyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodyApp.swift; sourceTree = "<group>"; };
 		84225E342A44080300A1EAB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +116,12 @@
 		844D42A92A4D73C400C0DE25 /* CacheImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheImageLoader.swift; sourceTree = "<group>"; };
 		844D42AA2A4D73C400C0DE25 /* PillView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
 		844D42AB2A4D73C400C0DE25 /* AsynImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsynImageView.swift; sourceTree = "<group>"; };
+		8487355C2A566DAC0073EBC8 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		8487355D2A566DAC0073EBC8 /* VolumeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
+		8487355E2A566DAC0073EBC8 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		8487355F2A566DAC0073EBC8 /* SlidersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidersView.swift; sourceTree = "<group>"; };
+		848735602A566DAC0073EBC8 /* MusicProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicProgressSlider.swift; sourceTree = "<group>"; };
+		848735612A566DAC0073EBC8 /* VerticalVolumeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalVolumeSlider.swift; sourceTree = "<group>"; };
 		84A1E5E92A4E495D0097889B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84B852C12A48170B006DBE06 /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		84B852C22A48170B006DBE06 /* RiffWaveUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiffWaveUtils.swift; sourceTree = "<group>"; };
@@ -122,8 +140,10 @@
 				840069A12A51131C006BB696 /* SwiftUINavigationCore in Frameworks */,
 				840069AE2A53993B006BB696 /* PodcastIndexKit in Frameworks */,
 				84225E892A4498C000A1EAB0 /* Logging in Frameworks */,
+				8419E9CD2A56AB7C00740154 /* WrappingHStack in Frameworks */,
 				840069AB2A530BF0006BB696 /* SwiftUIIntrospect in Frameworks */,
 				844D429E2A4C7C4700C0DE25 /* Popovers in Frameworks */,
+				8419E9D02A56FAAB00740154 /* SmartString in Frameworks */,
 				840069A82A53098A006BB696 /* VisibilityTrackingScrollView in Frameworks */,
 				84225E862A44609600A1EAB0 /* AudioKit in Frameworks */,
 				844D42912A4875C200C0DE25 /* Zip in Frameworks */,
@@ -305,9 +325,12 @@
 		844D42A62A4D73C400C0DE25 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8419E9C92A56A79F00740154 /* MRAttributedTextView.swift */,
+				8487355B2A566DAC0073EBC8 /* Slider */,
 				844D42A72A4D73C400C0DE25 /* CacheAsyncImage */,
 				844D42AA2A4D73C400C0DE25 /* PillView.swift */,
 				844D42AB2A4D73C400C0DE25 /* AsynImageView.swift */,
+				8419E9D12A57026D00740154 /* TappableText.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -319,6 +342,19 @@
 				844D42A92A4D73C400C0DE25 /* CacheImageLoader.swift */,
 			);
 			path = CacheAsyncImage;
+			sourceTree = "<group>";
+		};
+		8487355B2A566DAC0073EBC8 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				8487355C2A566DAC0073EBC8 /* CustomSlider.swift */,
+				8487355D2A566DAC0073EBC8 /* VolumeSlider.swift */,
+				8487355E2A566DAC0073EBC8 /* Double+Extension.swift */,
+				8487355F2A566DAC0073EBC8 /* SlidersView.swift */,
+				848735602A566DAC0073EBC8 /* MusicProgressSlider.swift */,
+				848735612A566DAC0073EBC8 /* VerticalVolumeSlider.swift */,
+			);
+			path = Slider;
 			sourceTree = "<group>";
 		};
 		84B852BD2A4816F8006DBE06 /* Resources */ = {
@@ -398,6 +434,8 @@
 				840069A72A53098A006BB696 /* VisibilityTrackingScrollView */,
 				840069AA2A530BF0006BB696 /* SwiftUIIntrospect */,
 				840069AD2A53993B006BB696 /* PodcastIndexKit */,
+				8419E9CC2A56AB7C00740154 /* WrappingHStack */,
+				8419E9CF2A56FAAB00740154 /* SmartString */,
 			);
 			productName = Pody;
 			productReference = 84225E2F2A44080300A1EAB0 /* Pody.app */;
@@ -485,6 +523,8 @@
 				840069A62A53098A006BB696 /* XCRemoteSwiftPackageReference "VisibilityTrackingScrollView" */,
 				840069A92A530BF0006BB696 /* XCRemoteSwiftPackageReference "swiftui-introspect" */,
 				840069AC2A53993B006BB696 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */,
+				8419E9CB2A56AB7C00740154 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+				8419E9CE2A56FAAB00740154 /* XCRemoteSwiftPackageReference "SmartString" */,
 			);
 			productRefGroup = 84225E302A44080300A1EAB0 /* Products */;
 			projectDirPath = "";
@@ -532,22 +572,30 @@
 				84A1E5EA2A4E495D0097889B /* Constants.swift in Sources */,
 				844D42AE2A4D73C400C0DE25 /* PillView.swift in Sources */,
 				84225E802A445FFB00A1EAB0 /* WhisperService.swift in Sources */,
+				848735632A566DAC0073EBC8 /* VolumeSlider.swift in Sources */,
 				84225E3C2A44080500A1EAB0 /* Persistence.swift in Sources */,
 				840069B02A539A2B006BB696 /* PodcastIndexService.swift in Sources */,
 				84225E7C2A445FD600A1EAB0 /* DownloadService.swift in Sources */,
+				848735642A566DAC0073EBC8 /* Double+Extension.swift in Sources */,
 				84225E3F2A44080500A1EAB0 /* Pody.xcdatamodeld in Sources */,
 				84225E352A44080300A1EAB0 /* ContentView.swift in Sources */,
+				848735652A566DAC0073EBC8 /* SlidersView.swift in Sources */,
 				844D42A42A4D689800C0DE25 /* TranscriptionView.swift in Sources */,
+				848735662A566DAC0073EBC8 /* MusicProgressSlider.swift in Sources */,
 				8400699A2A5080B8006BB696 /* Route.swift in Sources */,
 				84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */,
+				848735672A566DAC0073EBC8 /* VerticalVolumeSlider.swift in Sources */,
 				84F9960F2A46F29F00E9AEBE /* Episode.swift in Sources */,
+				8419E9CA2A56A79F00740154 /* MRAttributedTextView.swift in Sources */,
 				84225E332A44080300A1EAB0 /* PodyApp.swift in Sources */,
 				844D429B2A4C6A4500C0DE25 /* PlayerViewModel.swift in Sources */,
+				848735622A566DAC0073EBC8 /* CustomSlider.swift in Sources */,
 				844D42972A4B22C200C0DE25 /* SubtitleUnitView.swift in Sources */,
 				84BEA3862A481DEB00EC8E8F /* WhisperServiceV2.swift in Sources */,
 				8400699C2A5080CF006BB696 /* Router.swift in Sources */,
 				84225E7E2A445FEB00A1EAB0 /* SubtitleService.swift in Sources */,
 				84225E7A2A445FAF00A1EAB0 /* Subtitle.swift in Sources */,
+				8419E9D22A57026D00740154 /* TappableText.swift in Sources */,
 				844D42952A4B228B00C0DE25 /* SubtitleView.swift in Sources */,
 				84225E8B2A45308A00A1EAB0 /* PlayerView.swift in Sources */,
 				844D42AC2A4D73C400C0DE25 /* CacheAsyncImage.swift in Sources */,
@@ -919,6 +967,22 @@
 				kind = branch;
 			};
 		};
+		8419E9CB2A56AB7C00740154 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = exactVersion;
+				version = 2.2.10;
+			};
+		};
+		8419E9CE2A56FAAB00740154 /* XCRemoteSwiftPackageReference "SmartString" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vetrek/SmartString.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		84225E842A44609600A1EAB0 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
@@ -986,6 +1050,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 840069AC2A53993B006BB696 /* XCRemoteSwiftPackageReference "PodcastIndexKit" */;
 			productName = PodcastIndexKit;
+		};
+		8419E9CC2A56AB7C00740154 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8419E9CB2A56AB7C00740154 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
+		8419E9CF2A56FAAB00740154 /* SmartString */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8419E9CE2A56FAAB00740154 /* XCRemoteSwiftPackageReference "SmartString" */;
+			productName = SmartString;
 		};
 		84225E852A44609600A1EAB0 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;

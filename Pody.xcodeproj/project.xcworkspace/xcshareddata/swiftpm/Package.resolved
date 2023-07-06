@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "SmartString",
+        "repositoryURL": "https://github.com/vetrek/SmartString.git",
+        "state": {
+          "branch": "main",
+          "revision": "ade11d7dfa87f418c451673742ed9c47cf6995bd",
+          "version": null
+        }
+      },
+      {
         "package": "swift-case-paths",
         "repositoryURL": "https://github.com/pointfreeco/swift-case-paths",
         "state": {
@@ -107,6 +116,15 @@
           "branch": "main",
           "revision": "65948d428fdb6c82bb56754f7030eb28b21a795c",
           "version": null
+        }
+      },
+      {
+        "package": "WrappingHStack",
+        "repositoryURL": "https://github.com/dkk/WrappingHStack",
+        "state": {
+          "branch": null,
+          "revision": "f31b8fdc57759c5aa5fc98c70746db5556e73300",
+          "version": "2.2.10"
         }
       },
       {

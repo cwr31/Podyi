@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FD4600A5-AF37-40E0-86A7-9A91E9D672CF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PodyTests/SubtitleServiceTests.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "507E2116-F671-4937-8145-24CE6115CCC2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pody/Services/PodcastIndexService.swift"
@@ -80,6 +80,51 @@
                   startingLineNumber = "29"
                   endingLineNumber = "29"
                   offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "507E2116-F671-4937-8145-24CE6115CCC2 - a9214abce8de555c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Pody.PodcastIndexService.search() async -&gt; ()"
+                  moduleName = "Pody"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cwr/Desktop/Pody/Pody/Services/PodcastIndexService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "507E2116-F671-4937-8145-24CE6115CCC2 - 7f1d018f8173865d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Pody.PodcastIndexService.search() async -&gt; ()"
+                  moduleName = "Pody"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cwr/Desktop/Pody/Pody/Services/PodcastIndexService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "507E2116-F671-4937-8145-24CE6115CCC2 - 7f1d018f8173865d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Pody.PodcastIndexService.search() async -&gt; ()"
+                  moduleName = "Pody"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cwr/Desktop/Pody/Pody/Services/PodcastIndexService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "128">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -13,20 +13,20 @@ import SwiftUI
 
 struct PlayerView: View {
     let logger = Logger(label: "player")
-    
+
     @EnvironmentObject var playerViewModel: PlayerViewModel
-    
-    @State  var playbackSpeed: Float = 1.0
-    @State  var speedSelectorPopUp: Bool = false
-    @State  var episode : Episode
-    
+
+    @State var playbackSpeed: Float = 1.0
+    @State var speedSelectorPopUp: Bool = false
+    @State var episode: Episode
+
     var body: some View {
-        VStack (spacing: 0){
+        VStack(spacing: 0) {
             SubtitleView()
                 .environmentObject(playerViewModel)
-            
+
             Spacer()
-            
+
             if speedSelectorPopUp {
                 SpeedSelectView(speedSelectorPopUp: $speedSelectorPopUp, playbackSpeed: $playbackSpeed)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
@@ -34,61 +34,61 @@ struct PlayerView: View {
                         playerViewModel.setPlaybackSpeed(to: newSpeed)
                     }
             }
-            
+
             // 展示进度条的时间
-            
+
             HStack {
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(width: 55, height: 20)
                     .overlay(
-                        Text(formatTime(time:playerViewModel.currentTime, withMs: false))
+                        Text(formatTime(time: playerViewModel.currentTime, withMs: false))
                             .font(.system(size: 12))
                             .foregroundColor(.secondary)
                     )
                     .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
-                
+
                 // 展示进度条
                 Slider(value: $playerViewModel.currentTime,
                        in: 0 ... playerViewModel.totalDuration,
                        step: 1,
                        onEditingChanged: { editing in
-                    if !editing {
-                        print("newTime: \(playerViewModel.currentTime)")
-                        playerViewModel.seek(to: playerViewModel.currentTime, updateCurrentSubtitleIndex: true)
-                        playerViewModel.togglePlayback()
-                    } else {
-                        playerViewModel.togglePlayback()
-                    }
-                }
-                )
-                .introspect(.slider, on: .iOS(.v13, .v14, .v15, .v16, .v17)) { slider in
-                    let config = UIImage.SymbolConfiguration(scale: .small)
-                    let thumbImage = UIImage(systemName: "circle.fill", withConfiguration: config)
-                    slider.setThumbImage(thumbImage, for: .normal)
+                           if !editing {
+                               print("newTime: \(playerViewModel.currentTime)")
+                               playerViewModel.seek(to: playerViewModel.currentTime, updateCurrentSubtitleIndex: true)
+                               playerViewModel.togglePlayback()
+                           } else {
+                               playerViewModel.togglePlayback()
+                           }
+                       })
+                       .introspect(.slider, on: .iOS(.v13, .v14, .v15, .v16, .v17)) { slider in
+                           let config = UIImage.SymbolConfiguration(scale: .small)
+                           let thumbImage = UIImage(systemName: "circle.fill", withConfiguration: config)
+                           slider.translatesAutoresizingMaskIntoConstraints = false
+                           slider.widthAnchor.constraint(equalToConstant: 200).isActive = true
+                           slider.setThumbImage(thumbImage, for: .normal)
+                       }
+                       .tint(.primary)
+                       .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
 
-                }
-                .tint(.primary)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(width: 55, height: 20)
                     .overlay(
-                        Text(formatTime(time:playerViewModel.totalDuration, withMs: false))
+                        Text(formatTime(time: playerViewModel.totalDuration, withMs: false))
                             .font(.system(size: 12))
                             .foregroundColor(.secondary)
                     )
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 5))
             }
-            
+
             //            if !speedSelectorPopUp {
             //                // show progress
             //                ProgressView(value: playerViewModel.currentTime, total: playerViewModel.totalDuration)
             //                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             //                    .tint(.primary)
             //            }
-            
+
             HStack {
                 // 字幕切换，有四个选项：主字幕、副字幕、主字幕+副字幕、无字幕
                 Button(action: {
@@ -116,9 +116,9 @@ struct PlayerView: View {
                             .symbolRenderingMode(.hierarchical)
                     }
                 })
-                
+
                 Spacer()
-                
+
                 Button(action: {
                     playerViewModel.previousSubtitle()
                 }, label: {
@@ -127,13 +127,12 @@ struct PlayerView: View {
                         .foregroundColor(.primary)
                 })
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                
-                
+
                 Button(action: {
                     playerViewModel.togglePlayback()
                 }, label: {
-                    if (playerViewModel.isPlaying) {
-                        Image(systemName:  "pause.circle.fill")
+                    if playerViewModel.isPlaying {
+                        Image(systemName: "pause.circle.fill")
                             .font(.system(size: 50))
                             .foregroundColor(.primary)
                             .symbolRenderingMode(.hierarchical)
@@ -144,7 +143,7 @@ struct PlayerView: View {
                             .symbolRenderingMode(.hierarchical)
                     }
                 })
-                
+
                 Button(action: {
                     playerViewModel.nextSubtitle()
                 }, label: {
@@ -152,11 +151,11 @@ struct PlayerView: View {
                         .font(.system(size: 20))
                         .foregroundColor(.primary)
                         .symbolRenderingMode(.hierarchical)
-                    
+
                 })
-                
+
                 Spacer()
-                
+
                 VStack {
                     Button(action: {
                         withAnimation(.spring()) {
@@ -166,7 +165,23 @@ struct PlayerView: View {
                         Text("\(playbackSpeed)x")
                     }
                 }
-                
+
+                // 点击按钮弹出SpeedSelectView
+                // Button(action: {
+                //     withAnimation(.spring()) {
+                //         speedSelectorPopUp.toggle()
+                //     }
+                // }, label: {
+                //     Text("\(playbackSpeed)x")
+                // })
+                // .popover(isPresented: $speedSelectorPopUp, arrowEdge: .bottom) {
+                //     SpeedSelectView(speedSelectorPopUp: $speedSelectorPopUp, playbackSpeed: $playbackSpeed)
+                //     .introspect(.popover, on: .iOS(.v13, .v14, .v15, .v16, .v17)) { popover in
+                //         print(popover)
+                //         // popover.presentationCompactness = .popover
+                //     }
+                // }
+
                 Spacer()
             }
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
@@ -187,7 +202,11 @@ struct SpeedSelectView: View {
             HStack {
                 Image(systemName: "speedometer")
                 Spacer()
-                
+
+                VerticalVolumeSlider(value: $playbackSpeed, inRange: 0.5 ... 3.0, activeFillColor: .white, fillColor: .red, emptyColor: .green, width: 8) { _ in
+                }
+                .frame(height: 130)
+
                 Slider(value: $playbackSpeed, in: 0.5 ... 3.0, step: 0.01, onEditingChanged: { editing in
                     if !editing {
                         playerViewModel.setPlaybackSpeed(to: playbackSpeed)
@@ -195,17 +214,14 @@ struct SpeedSelectView: View {
                             speedSelectorPopUp.toggle()
                         }
                     }
-                }
-                )
+                })
                 .introspect(.slider, on: .iOS(.v13, .v14, .v15, .v16, .v17)) { slider in
                     let config = UIImage.SymbolConfiguration(scale: .small)
                     slider.setThumbImage(UIImage(systemName: "circle.fill",
                                                  withConfiguration: config), for: .normal)
                 }
             }
-            
-            
-            
+
             HStack {
                 Text("0.5x")
                     .font(.system(size: 18))
@@ -213,13 +229,9 @@ struct SpeedSelectView: View {
                 Text("3x")
                     .font(.system(size: 18))
             }
-            
-            
-            
         }
     }
 }
-
 
 struct PlayerViewTest_Previews: PreviewProvider {
     static var previews: some View {

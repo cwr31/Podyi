@@ -22,7 +22,7 @@ extension Route: View {
         switch self {
         case .home:
             PlayerView(episode: Episode(id: 1, url: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3"), author: "All ears", duration: 1000.0, transcribed: true, primarySubtitles: [], secondarySubtitles: []))
-        case .detail(let id, let type):
+        case let .detail(id, type):
             Test()
         }
     }
@@ -30,9 +30,9 @@ extension Route: View {
 
 extension Route: Hashable {
     static func == (lhs: Route, rhs: Route) -> Bool {
-        return lhs.compareString == rhs.compareString
+        lhs.compareString == rhs.compareString
     }
-    
+
     var compareString: String {
         switch self {
         case .home:

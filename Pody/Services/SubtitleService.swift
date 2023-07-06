@@ -102,7 +102,7 @@ func formatTime(time: TimeInterval, withMs: Bool = true) -> String {
         return srtString
     } else {
         // 小时没有的时候，不显示小时
-        if (hours == 0) {
+        if hours == 0 {
             let srtString = String(format: "%02d:%02d", minutes, seconds)
             return srtString
         } else {
