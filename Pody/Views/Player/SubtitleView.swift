@@ -10,8 +10,9 @@ import SwiftUIIntrospect
 
 struct SubtitleView: View {
     @EnvironmentObject var playerViewModel: PlayerViewModel
+
     @State var lastVisibleIndex: Int = 0
-    
+
     var body: some View {
         ScrollViewReader { scrollView in
             List {
@@ -23,31 +24,6 @@ struct SubtitleView: View {
                         .contentShape(Rectangle())
                         .onTapGesture {
                             playerViewModel.seek(to: subtitle.startTime, updateCurrentSubtitleIndex: true)
-                        }
-                        .contextMenu{
-                            Button(action: {
-                                // 执行操作1
-                                print("执行操作1")
-                            }) {
-                                Text("操作1")
-                                Image(systemName: "square.and.arrow.up")
-                            }
-                            
-                            Button(action: {
-                                // 执行操作2
-                                print("执行操作2")
-                            }) {
-                                Text("操作2")
-                                Image(systemName: "trash")
-                            }
-                            
-                            Button(action: {
-                                // 执行操作3
-                                print("执行操作3")
-                            }) {
-                                Text("操作3")
-                                Image(systemName: "pencil")
-                            }
                         }
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                 }
@@ -75,13 +51,13 @@ struct SubtitleView: View {
             .onReceive(playerViewModel.$currentSubtitleIndex) { newIndex in
                 logger.info("scrollto: \(newIndex)")
                 withAnimation {
+                    scrollView.scrollTo(newIndex, anchor: .center)
                     //                    if (newIndex >= lastVisibleIndex) {
                     //                        logger.info("do scrollto: \(newIndex)")
                     //                        scrollView.scrollTo(newIndex - 1, anchor: .top)
                     //                    } else if (newIndex < lastVisibleIndex){
                     //
                     //                    }
-                    scrollView.scrollTo(newIndex, anchor: .center)
                 }
             }
         }

@@ -24,6 +24,9 @@ class PlayerViewModel: ObservableObject {
     @Published var currentSubtitleIndex = 1
     // 字幕的类型
     @Published var subtitleMode: SubtitleMode = .primary
+
+    @Published var selectedWord: String = ""
+    @Published var isSelectedWord: Bool = false
     // @Published var playbackSpeed: Float = 1.0
 
     //    var wavFilePath = FileManager.default.playList(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("ALLE1323962167.mp3")

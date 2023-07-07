@@ -10,11 +10,10 @@ import WrappingHStack
 
 struct Test: View {
     @EnvironmentObject var podi: PodcastIndexService
-    
 
-    private let words = ["a", "a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a",]
+    private let words = ["a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a"]
     var body: some View {
-        WrappingHStack(words, id:\.self) { word in
+        WrappingHStack(words, id: \.self) { word in
             Button(action: {
                 print("\(word)")
             }, label: {

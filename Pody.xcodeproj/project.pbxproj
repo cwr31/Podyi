@@ -20,6 +20,8 @@
 		8419E9CD2A56AB7C00740154 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 8419E9CC2A56AB7C00740154 /* WrappingHStack */; };
 		8419E9D02A56FAAB00740154 /* SmartString in Frameworks */ = {isa = PBXBuildFile; productRef = 8419E9CF2A56FAAB00740154 /* SmartString */; };
 		8419E9D22A57026D00740154 /* TappableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419E9D12A57026D00740154 /* TappableText.swift */; };
+		8419E9D42A58517E00740154 /* YYSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419E9D32A58517E00740154 /* YYSliderView.swift */; };
+		8419E9D82A5851BE00740154 /* PopupMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419E9D72A5851BE00740154 /* PopupMenuView.swift */; };
 		84225E332A44080300A1EAB0 /* PodyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E322A44080300A1EAB0 /* PodyApp.swift */; };
 		84225E352A44080300A1EAB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225E342A44080300A1EAB0 /* ContentView.swift */; };
 		84225E372A44080500A1EAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84225E362A44080500A1EAB0 /* Assets.xcassets */; };
@@ -90,6 +92,8 @@
 		840069AF2A539A2B006BB696 /* PodcastIndexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastIndexService.swift; sourceTree = "<group>"; };
 		8419E9C92A56A79F00740154 /* MRAttributedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRAttributedTextView.swift; sourceTree = "<group>"; };
 		8419E9D12A57026D00740154 /* TappableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableText.swift; sourceTree = "<group>"; };
+		8419E9D32A58517E00740154 /* YYSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YYSliderView.swift; path = ../../../../../../Downloads/YYSliderView.swift; sourceTree = "<group>"; };
+		8419E9D72A5851BE00740154 /* PopupMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupMenuView.swift; sourceTree = "<group>"; };
 		84225E2F2A44080300A1EAB0 /* Pody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84225E322A44080300A1EAB0 /* PodyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodyApp.swift; sourceTree = "<group>"; };
 		84225E342A44080300A1EAB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 		844D42922A4B225B00C0DE25 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				8419E9D72A5851BE00740154 /* PopupMenuView.swift */,
 				84225E8A2A45308A00A1EAB0 /* PlayerView.swift */,
 				844D42942A4B228B00C0DE25 /* SubtitleView.swift */,
 				844D42962A4B22C200C0DE25 /* SubtitleUnitView.swift */,
@@ -347,6 +352,7 @@
 		8487355B2A566DAC0073EBC8 /* Slider */ = {
 			isa = PBXGroup;
 			children = (
+				8419E9D32A58517E00740154 /* YYSliderView.swift */,
 				8487355C2A566DAC0073EBC8 /* CustomSlider.swift */,
 				8487355D2A566DAC0073EBC8 /* VolumeSlider.swift */,
 				8487355E2A566DAC0073EBC8 /* Double+Extension.swift */,
@@ -582,6 +588,7 @@
 				848735652A566DAC0073EBC8 /* SlidersView.swift in Sources */,
 				844D42A42A4D689800C0DE25 /* TranscriptionView.swift in Sources */,
 				848735662A566DAC0073EBC8 /* MusicProgressSlider.swift in Sources */,
+				8419E9D82A5851BE00740154 /* PopupMenuView.swift in Sources */,
 				8400699A2A5080B8006BB696 /* Route.swift in Sources */,
 				84B852C42A48170B006DBE06 /* RiffWaveUtils.swift in Sources */,
 				848735672A566DAC0073EBC8 /* VerticalVolumeSlider.swift in Sources */,
@@ -595,6 +602,7 @@
 				8400699C2A5080CF006BB696 /* Router.swift in Sources */,
 				84225E7E2A445FEB00A1EAB0 /* SubtitleService.swift in Sources */,
 				84225E7A2A445FAF00A1EAB0 /* Subtitle.swift in Sources */,
+				8419E9D42A58517E00740154 /* YYSliderView.swift in Sources */,
 				8419E9D22A57026D00740154 /* TappableText.swift in Sources */,
 				844D42952A4B228B00C0DE25 /* SubtitleView.swift in Sources */,
 				84225E8B2A45308A00A1EAB0 /* PlayerView.swift in Sources */,
