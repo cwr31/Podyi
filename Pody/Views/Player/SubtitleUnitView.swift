@@ -21,18 +21,10 @@ struct SubtitleUnitView: View {
     var body: some View {
         /// 有spacing就不需要padding了
         VStack(alignment: .leading, spacing: 5) {
-            Text("\(subtitle.index)-\(formatTimeWithoutHour(time: subtitle.startTime))")
+            Text("\(subtitle.index)-\(formatTime(time: subtitle.startTime, withMs: false))")
                 .font(.system(size: UIFont.preferredFont(forTextStyle: .caption1).pointSize, design: .serif))
                 .foregroundColor(.blue)
 
-            // Text(subtitle.text.trimmingCharacters(in: .whitespacesAndNewlines))
-            //     .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize, design: .default))
-            //     .foregroundColor((playerViewModel.currentSubtitleIndex == subtitle.index) ? .green : .primary)
-            //     .multilineTextAlignment(.leading)
-            //     .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
-
-            //            TextWithClickableWords(text: subtitle.text)
-            //                .foregroundColor(.primary)
 
             TappableText(subtitle: subtitle)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 0))
@@ -78,7 +70,7 @@ struct SubtitleUnitView: View {
 
 struct SubtitleUnitView_Previews: PreviewProvider {
     static var previews: some View {
-        SubtitleUnitView(subtitle: Subtitle(index: 1, startTime: 0, endTime: 1, text: "pody as da s sd", text_1: "Pody"))
+        SubtitleUnitView(subtitle: Subtitle(index: 1, startTime: 0, endTime: 1, text: "pody as da s sd", text_1: "pody as da s sd"))
             .environmentObject(PlayerViewModel())
     }
 }

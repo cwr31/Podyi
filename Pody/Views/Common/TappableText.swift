@@ -36,13 +36,15 @@ struct TappableText: View {
         ForEach(Array(zip(words.indices, words)), id: \.0) { _, word in
             Text("\(word) ")
                 .font(.system(size: UIFont.preferredFont(forTextStyle: .body).pointSize, design: .default))
+            /// 使用了会导致词汇位置被挤到到下一行，弃用
+//                .fontWeight(word.toWord() == playerViewModel.selectedWord ? .bold : .regular)
                 .foregroundColor((playerViewModel.currentSubtitleIndex == currentSubtitleIndex) ? .green : .primary)
-                .background(
-                    RoundedRectangle(cornerRadius: 6)
-                        .fill(.yellow)
-                        .opacity(word.toWord() == playerViewModel.selectedWord ? 1 : 0)
-                )
                 .foregroundColor(word.toWord() == playerViewModel.selectedWord ? .white : .black)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(.yellow)
+                        .opacity(word.toWord() == playerViewModel.selectedWord ? 0.5 : 0)
+                )
                 .onTapGesture(count: 2) {
                     if playerViewModel.selectedWord == word.toWord() {
                         playerViewModel.selectedWord = ""
@@ -145,7 +147,7 @@ struct TappableText: View {
             DispatchQueue.main.async {
                 binding.wrappedValue = geometry.frame(in: .local).height
             }
-            
+
             return .clear
         }
     }
@@ -154,8 +156,7 @@ struct TappableText: View {
 struct ContentView2_Previews: PreviewProvider {
     static var previews: some View {
         TappableText(subtitle: Subtitle(index: 1, startTime: 0, endTime: 1, text: "pody as da s sd", text_1: "Pody"))
-            .padding()
-            .edgesIgnoringSafeArea(.all)
+            .environmentObject(PlayerViewModel())
     }
 }
 
